@@ -41,7 +41,7 @@ export const Banner: React.FC<BannerProps> = ({ className }) => {
         >
           <Image
             className="w-[80%] ml-auto"
-            src="/images/Iphone.png"
+            src="/images/iphone.png"
             width={609}
             height={948}
             alt="phone"
