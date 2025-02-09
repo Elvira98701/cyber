@@ -23,9 +23,9 @@ export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
   defaultItems,
   limit = 5,
   className,
-  loading,
-  onClickCheckbox,
-  selected,
+  // loading,
+  // onClickCheckbox,
+  // selected,
   name,
 }) => {
   const [showAll, setShowAll] = useState(false);
