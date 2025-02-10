@@ -12,7 +12,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 }) => {
   return (
     <nav className={className}>
-      <ul className="flex items-center justify-center gap-12">
+      <ul className="flex items-center justify-center gap-6 lg:gap-12">
         {navList.map(({ id, name, link }) => (
           <li key={id}>
             <Link

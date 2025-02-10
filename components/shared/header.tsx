@@ -2,7 +2,7 @@ import { INavItem } from "@/types";
 import { Navigation, SearchInput } from "../ui";
 import { Container } from "./container";
 import { Logo } from "./logo";
-import { Heart, ShoppingCart, User } from "lucide-react";
+import { Heart, Menu, ShoppingCart, User } from "lucide-react";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
@@ -24,11 +24,14 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
         className
       )}
     >
-      <Container className="min-h-20 flex items-center justify-between gap-14">
+      <Container className="min-h-20 flex items-center justify-between gap-5 lg:gap-14">
         <Logo className="text-foreground" />
         <SearchInput />
         <Navigation navList={navList} className="hidden md:block" />
-        <div className="flex items-center justify-center gap-2">
+        <Button className="md:hidden" variant="secondary">
+          <Menu />
+        </Button>
+        <div className="items-center justify-center gap-2 hidden md:flex">
           <Button variant="secondary" size="icon">
             <Heart size={24} />
           </Button>

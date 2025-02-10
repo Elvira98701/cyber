@@ -13,7 +13,7 @@ export const Categories: React.FC<CategoriesProps> = ({
 }) => {
   return (
     <section className={className}>
-      <h1 className="text-5xl font-thin pb-10">
+      <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">
         Product <span className="font-bold">Catalog</span>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">

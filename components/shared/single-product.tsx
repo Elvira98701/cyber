@@ -23,11 +23,15 @@ export const SingleProduct: React.FC<ProductProps> = ({
       <Container className="flex flex-col md:flex-row gap-12">
         <ImagesPresentation images={product.images} className="flex-1" />
         <div className="flex-1">
-          <h1 className="font-bold text-4xl">{product.name}</h1>
+          <h1 className="font-bold text-3xl md:text-4xl">{product.name}</h1>
           <div className="flex gap-3 my-4">
-            <span className="font-medium text-2xl">${product.price}</span>
+            <span className="font-medium text-xl md:text-2xl">
+              ${product.price}
+            </span>
             {product.discount && (
-              <del className="text-2xl text-zinc-400">${product.discount}</del>
+              <del className="text-xl md:text-2xl text-zinc-400">
+                ${product.discount}
+              </del>
             )}
           </div>
           {product.colors.length > 0 && (

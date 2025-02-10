@@ -8,7 +8,7 @@ export default function Layout({
   return (
     <main className="py-20 bg-muted">
       <Container>
-        <BreadcrumbSection className="py-11" />
+        <BreadcrumbSection className="py-8 md:py-11" />
       </Container>
       {children}
     </main>

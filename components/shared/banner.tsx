@@ -12,10 +12,10 @@ interface BannerProps {
 
 export const Banner: React.FC<BannerProps> = ({ className }) => {
   return (
-    <section className={cn("gradient", className)}>
+    <section className={cn("gradient overflow-hidden", className)}>
       <Container className="h-screen flex items-center justify-between flex-col lg:flex-row">
         <div className="flex-2 text-center lg:text-left">
-          <div className="mt-[25vh] lg:mt-0">
+          <div className="mt-[20vh] lg:mt-0">
             <span className="text-muted-foreground font-semibold text-2xl">
               Pro.Beyond.
             </span>
@@ -42,7 +42,7 @@ export const Banner: React.FC<BannerProps> = ({ className }) => {
           transition={{ duration: 0.5 }}
         >
           <Image
-            className="w-[80%] mx-auto lg:ml-auto lg:mr-0 hidden lg:block"
+            className="w-full lg:w-[60%] 2xl:w-[70%] mx-auto sm:ml-auto sm:mr-0 hidden sm:block"
             src="/images/iphone.png"
             width={609}
             height={948}
@@ -50,7 +50,7 @@ export const Banner: React.FC<BannerProps> = ({ className }) => {
             priority
           />
           <Image
-            className="block mx-auto lg:hidden"
+            className="block mx-auto sm:hidden"
             src="/images/iphone-mobile.png"
             width={343}
             height={289}
