@@ -24,7 +24,7 @@ export default async function CategoryPage({
   return (
     <Container>
       <div className="flex gap-8">
-        <div className="w-64">
+        <div className="filters hidden sm:block">
           <Filters />
         </div>
         <div className="flex-1">

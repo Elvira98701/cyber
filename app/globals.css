@@ -89,6 +89,10 @@ p {
   color: #9D9D9D;
 }
 
+.filters {
+  width: clamp(10rem, 8.8rem + 6vw, 16rem);
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;

@@ -23,22 +23,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className={className}>
       <Card className="py-6 px-4 text-center">
-        <CardContent className="flex flex-col items-center justify-center gap-4 relative min-h-96">
+        <CardContent className="flex flex-col items-center justify-between gap-4 relative min-h-96">
           <Image
             src={imageUrl}
             width={400}
             height={400}
             alt={name}
-            className="p-4 bg-background rounded-lg w-full object-cover"
+            className="p-4 bg-background rounded-lg object-contain"
           />
-          <h3 className="font-medium">{name}</h3>
-          <span className="font-semibold text-2xl">${price}</span>
-          <ButtonLink href={`/catalog/${categorySlug}/${slug}`}>
-            Buy Now
-          </ButtonLink>
-          <button className="absolute top-0 right-0">
-            <Heart size={22} />
-          </button>
+          <div className="flex flex-col gap-2">
+            <h3 className="font-medium">{name}</h3>
+            <span className="font-semibold text-2xl">${price}</span>
+            <ButtonLink href={`/catalog/${categorySlug}/${slug}`}>
+              Buy Now
+            </ButtonLink>
+            <button className="absolute top-0 right-0">
+              <Heart size={22} />
+            </button>
+          </div>
         </CardContent>
       </Card>
     </div>

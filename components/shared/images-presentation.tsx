@@ -26,11 +26,16 @@ export const ImagesPresentation: React.FC<ImagesPresentationProps> = ({
   };
 
   return (
-    <div className={cn("flex items-center gap-4 h-[520px]", className)}>
-      <div className="flex flex-col w-1/6 gap-2">
+    <div
+      className={cn(
+        "flex flex-col-reverse md:flex-row gap-4 h-[520px] items-center md:items-stretch",
+        className
+      )}
+    >
+      <div className="flex justify-center md:justify-start md:flex-col w-1/6 gap-2">
         {imagesCards.slice(1).map((image, index) => (
           <Image
-            className="w-full"
+            className="w-full object-cover cursor-pointer"
             key={image}
             src={image}
             alt=""
@@ -40,13 +45,13 @@ export const ImagesPresentation: React.FC<ImagesPresentationProps> = ({
           />
         ))}
       </div>
-      <div className="w-5/6 flex items-center justify-center">
+      <div className="w-5/6 flex">
         <Image
           src={imagesCards[0]}
           alt=""
           width={300}
           height={300}
-          className="flex-1"
+          className="object-contain flex-1"
         />
       </div>
     </div>

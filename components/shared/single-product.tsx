@@ -20,7 +20,7 @@ export const SingleProduct: React.FC<ProductProps> = ({
 
   return (
     <section className={cn("bg-background py-14", className)}>
-      <Container className="flex gap-12">
+      <Container className="flex flex-col md:flex-row gap-12">
         <ImagesPresentation images={product.images} className="flex-1" />
         <div className="flex-1">
           <h1 className="font-bold text-4xl">{product.name}</h1>
@@ -45,7 +45,7 @@ export const SingleProduct: React.FC<ProductProps> = ({
             </div>
           )}
           {product.memory.length > 0 && (
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               {product.memory.map((mem) => (
                 <span key={mem} className="py-4 px-6 border rounded-md">
                   {mem}
@@ -61,7 +61,7 @@ export const SingleProduct: React.FC<ProductProps> = ({
             </Button>
             <Button size="lg">Add to Cart</Button>
           </div>
-          <div className="flex mt-8 gap-8">
+          <div className="flex flex-wrap mt-8 gap-8">
             <div className="flex items-center gap-4">
               <span className="w-14 h-14 bg-muted flex items-center justify-center rounded-md">
                 <Truck size={24} />
