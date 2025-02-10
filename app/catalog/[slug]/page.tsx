@@ -1,4 +1,9 @@
-import { Filters, ProductList, SortPopup } from "@/components/shared";
+import {
+  Container,
+  Filters,
+  ProductList,
+  SortPopup,
+} from "@/components/shared";
 import { prisma } from "@/prisma/prisma-client";
 
 export default async function CategoryPage({
@@ -17,7 +22,7 @@ export default async function CategoryPage({
   });
 
   return (
-    <>
+    <Container>
       <div className="flex gap-8">
         <div className="w-64">
           <Filters />
@@ -33,6 +38,6 @@ export default async function CategoryPage({
           <ProductList products={products} categorySlug={params.slug} />
         </div>
       </div>
-    </>
+    </Container>
   );
 }

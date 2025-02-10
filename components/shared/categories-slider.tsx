@@ -8,7 +8,7 @@ import {
 } from "../ui/carousel";
 import { Container } from "./container";
 import { CategoryCard } from "./category-card";
-import { prisma } from "@/prisma/prisma-client";
+import { getCategories } from "@/services/categories";
 
 interface CategoriesSliderProps {
   className?: string;
@@ -17,7 +17,7 @@ interface CategoriesSliderProps {
 export const CategoriesSlider: React.FC<CategoriesSliderProps> = async ({
   className,
 }) => {
-  const categories = await prisma.category.findMany();
+  const categories = await getCategories();
 
   return (
     <section className={cn("py-20", className)}>

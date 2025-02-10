@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
       <Container className="min-h-20 flex items-center justify-between gap-14">
         <Logo className="text-foreground" />
         <SearchInput />
-        <Navigation navList={navList} />
+        <Navigation navList={navList} className="hidden md:block" />
         <div className="flex items-center justify-center gap-2">
           <Button variant="secondary" size="icon">
             <Heart size={24} />

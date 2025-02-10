@@ -17,18 +17,18 @@ export const Filters: React.FC<FiltersProps> = ({ className }) => {
             type="number"
             placeholder="0"
             min={0}
-            max={240000}
+            max={4900}
           />
           <Input
             className="bg-background"
             type="number"
             min={100}
-            max={250000}
-            placeholder="250000"
+            max={5000}
+            placeholder="5000"
           />
         </div>
 
-        <RangeSlider min={0} max={250000} step={100} />
+        <RangeSlider min={0} max={5000} step={10} />
       </div>
 
       <CheckboxFiltersGroup

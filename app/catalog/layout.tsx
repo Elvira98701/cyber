@@ -9,8 +9,8 @@ export default function Layout({
     <main className="py-20 bg-muted">
       <Container>
         <BreadcrumbSection className="py-11" />
-        {children}
       </Container>
+      {children}
     </main>
   );
 }

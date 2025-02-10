@@ -56,9 +56,10 @@ export const PopularProducts: React.FC<PopularProductsProps> = async ({
   return (
     <section className={className}>
       <h2 className="visually-hidden">Popular products</h2>
-      <Container className="flex">
+      <Container className="flex flex-wrap">
         {popularProducts.map((product, index) => (
           <article
+            className="w-full sm:w-1/2 lg:w-1/4"
             key={product.id}
             style={{
               backgroundColor: product.color,

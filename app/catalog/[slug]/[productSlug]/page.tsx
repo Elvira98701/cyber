@@ -1,3 +1,4 @@
+import { PopularProducts, SingleProduct } from "@/components/shared";
 import { prisma } from "@/prisma/prisma-client";
 
 export default async function ProductPage({
@@ -7,11 +8,13 @@ export default async function ProductPage({
 }) {
   const product = await prisma.product.findUnique({
     where: { slug: params.productSlug },
+    include: { specs: true, reviews: true },
   });
 
   return (
-    <div>
-      Product {params.productSlug} {product?.price}
-    </div>
+    <>
+      <SingleProduct product={product} />
+      <PopularProducts className="pt-20" />
+    </>
   );
 }

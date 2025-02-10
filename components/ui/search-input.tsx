@@ -74,14 +74,14 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         {products.length > 0 && (
           <div
             className={cn(
-              "absolute w-full bg-background rounded p-2 top-14 shadow-md transition-all duration-200 invisible opacity-0 z-30",
+              "absolute w-full bg-background rounded-lg p-2 top-14 shadow-md transition-all duration-200 invisible opacity-0 z-30",
               focused && "visible opacity-100 top-12"
             )}
           >
             {products.map((product) => (
               <Link
                 key={product.id}
-                className="flex items-center gap-3 rounded w-full px-3 py-2 hover:bg-primary/90 hover:text-background transition-all"
+                className="flex items-center gap-3 rounded-lg w-full px-3 py-2 hover:bg-primary/90 hover:text-background transition-all"
                 href={`/catalog/${product.category.slug}/${product.slug}`}
                 onClick={onClickItem}
               >

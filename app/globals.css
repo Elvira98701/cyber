@@ -5,7 +5,8 @@
 html, body {
   font-family: var(--font-inter), sans-serif;
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--foreground)) hsl(var(--muted));
+  scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+  overflow-x: hidden;
 }
 
 @layer utilities {

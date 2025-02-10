@@ -16,7 +16,7 @@ export const Categories: React.FC<CategoriesProps> = ({
       <h1 className="text-5xl font-thin pb-10">
         Product <span className="font-bold">Catalog</span>
       </h1>
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2">
         {categories.map((category) => (
           <CategoryCard
             key={category.id}
