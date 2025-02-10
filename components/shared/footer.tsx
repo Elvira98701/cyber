@@ -8,7 +8,9 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={cn("bg-foreground text-background py-28", className)}>
+    <footer
+      className={cn("bg-foreground text-background py-12 lg:py-28", className)}
+    >
       <Container>
         <div className="flex flex-col md:flex-row justify-between gap-5">
           <div className="flex-2">

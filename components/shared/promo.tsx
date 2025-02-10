@@ -14,9 +14,9 @@ export const Promo: React.FC<PromoProps> = ({ className }) => {
         className
       )}
     >
-      <Container className="min-h-[448px] flex items-center justify-center text-center">
+      <Container className="min-h-96 md:min-h-[448px] flex items-center justify-center text-center">
         <div>
-          <h2 className="font-thin text-background text-7xl">
+          <h2 className="font-thin text-background text-5xl md:text-7xl">
             Big Summer <span className="font-bold">Sale</span>
           </h2>
           <p className="mt-2 mb-4">
