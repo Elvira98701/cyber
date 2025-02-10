@@ -2,9 +2,9 @@ import { INavItem } from "@/types";
 import { Navigation, SearchInput } from "../ui";
 import { Container } from "./container";
 import { Logo } from "./logo";
-import { Heart, Menu, ShoppingCart, User } from "lucide-react";
-import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./mobile-menu";
+import { UserActions } from "./user-actions";
 
 interface HeaderProps {
   className?: string;
@@ -28,20 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
         <Logo className="text-foreground" />
         <SearchInput />
         <Navigation navList={navList} className="hidden md:block" />
-        <Button className="md:hidden" variant="secondary">
-          <Menu />
-        </Button>
-        <div className="items-center justify-center gap-2 hidden md:flex">
-          <Button variant="secondary" size="icon">
-            <Heart size={24} />
-          </Button>
-          <Button variant="secondary" size="icon">
-            <ShoppingCart size={24} />
-          </Button>
-          <Button variant="secondary" size="icon">
-            <User size={24} />
-          </Button>
-        </div>
+        <UserActions className="items-center justify-center gap-2 hidden md:flex" />
+        <MobileMenu className="md:hidden" navList={navList} />
       </Container>
     </header>
   );
