@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
 import { Logo } from "./logo";
+import { SocialList } from "./social-list";
 
 interface FooterProps {
   className?: string;
@@ -43,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             </ul>
           </div>
         </div>
-        <ul></ul>
+        <SocialList className="mt-6" />
       </Container>
     </footer>
   );

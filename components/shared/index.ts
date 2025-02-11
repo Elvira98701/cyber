@@ -23,5 +23,6 @@ export { RangeSlider } from "./range-slider";
 export { Reviews } from "./reviews";
 export { SingleProduct } from "./single-product";
 export { SmallerBanners } from "./smaller-banners";
+export { SocialList } from "./social-list";
 export { SortPopup } from "./sort-popup";
 export { UserActions } from "./user-actions";
