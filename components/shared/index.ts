@@ -20,6 +20,7 @@ export { ProductList } from "./products-list";
 export { ProductsTabs } from "./products-tabs";
 export { Promo } from "./promo";
 export { RangeSlider } from "./range-slider";
+export { Reviews } from "./reviews";
 export { SingleProduct } from "./single-product";
 export { SmallerBanners } from "./smaller-banners";
 export { SortPopup } from "./sort-popup";

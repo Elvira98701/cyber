@@ -1,8 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface ImagesPresentationProps {
   className?: string;
@@ -13,47 +13,41 @@ export const ImagesPresentation: React.FC<ImagesPresentationProps> = ({
   className,
   images,
 }) => {
-  const [imagesCards, setImagesCards] = useState(images);
-
-  const handleChangeImage = (idx: number) => {
-    if (idx === 0) return;
-
-    setImagesCards((prev) => {
-      const updatedImages = [...prev];
-      const [selectedImage] = updatedImages.splice(idx, 1);
-      return [selectedImage, ...updatedImages];
-    });
-  };
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div
-      className={cn(
-        "flex flex-col-reverse md:flex-row gap-4 h-[520px] items-center md:items-stretch",
-        className
-      )}
-    >
-      <div className="flex justify-center md:justify-start md:flex-col w-1/6 gap-2">
-        {imagesCards.slice(1).map((image, index) => (
-          <Image
-            className="w-full object-cover cursor-pointer"
-            key={image}
-            src={image}
-            alt=""
-            width={300}
-            height={300}
-            onClick={() => handleChangeImage(index + 1)}
+    <div className={cn("flex gap-4", className)}>
+      <div className="flex flex-col gap-2">
+        {images.map((img, index) => (
+          <motion.img
+            key={index}
+            src={img}
+            alt={`Thumbnail ${index}`}
+            className={`w-20 h-20 object-cover cursor-pointer rounded-lg border ${
+              selectedImage === img ? "border-primary" : "border-muted"
+            }`}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setSelectedImage(img)}
           />
         ))}
       </div>
-      <div className="w-5/6 flex">
-        <Image
-          src={imagesCards[0]}
-          alt=""
-          width={300}
-          height={300}
-          className="object-contain flex-1"
+      <motion.div
+        key={selectedImage}
+        className="w-full h-[520px] overflow-hidden"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.img
+          src={selectedImage}
+          alt="Selected"
+          className="w-full h-full object-contain"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

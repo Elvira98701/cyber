@@ -94,12 +94,17 @@ model Cart {
 }
 
 model CartItem {
-    id        Int     @id @default(autoincrement())
-    cart      Cart    @relation(fields: [cartId], references: [id])
-    cartId    Int
-    product   Product @relation(fields: [productId], references: [id])
-    productId Int
-    quantity  Int     @default(1)
+    id             Int     @id @default(autoincrement())
+    cart           Cart    @relation(fields: [cartId], references: [id])
+    cartId         Int
+    product        Product @relation(fields: [productId], references: [id])
+    productId      Int
+    quantity       Int     @default(1)
+    selectedColor  String?
+    selectedMemory String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Order {

@@ -31,7 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             alt={name}
             className="p-4 bg-background rounded-lg object-contain"
           />
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-center justify-center gap-2">
             <h3 className="font-medium">{name}</h3>
             <span className="font-semibold text-2xl">${price}</span>
             <ButtonLink href={`/catalog/${categorySlug}/${slug}`}>

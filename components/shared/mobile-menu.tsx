@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Navigation } from "../ui";
 import { Menu, X } from "lucide-react";
 import { INavItem } from "@/types";
 import { AnimatePresence, motion } from "motion/react";
 import { UserActions } from "./user-actions";
+import { useClickAway } from "react-use";
 
 interface MobileMenuProps {
   className?: string;
@@ -17,6 +18,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   navList,
 }) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const ref = useRef(null);
+
+  useClickAway(ref, () => {
+    setIsOpenMenu(false);
+  });
 
   return (
     <div className={className}>
@@ -30,6 +36,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             initial={{ translateY: "-100%" }}
             animate={{ translateY: "0%" }}
             exit={{ translateY: "-100%" }}
+            ref={ref}
           >
             <Navigation
               navList={navList}

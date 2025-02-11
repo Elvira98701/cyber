@@ -798,4 +798,25 @@ export const reviews = [
     productId: 4,
     userId: 1,
   },
+  {
+    rating: 5,
+    comment:
+      "I bought an iPhone 15 Pro a couple of months ago, and I'm generally satisfied. The camera is simply gorgeous, especially the night mode. Performance is at an altitude — any games and applications fly. The only negative is that it gets a little hot under load, but it's gotten better since the last update.",
+    productId: 2,
+    userId: 1,
+  },
+  {
+    rating: 5,
+    comment:
+      "I really liked the new titanium case — it feels cool in my hand. The camera just captures space, and the screen is super bright. But the battery does not last as long as we would like. If you actively use it, by the evening 10-15% remains.",
+    productId: 2,
+    userId: 3,
+  },
+  {
+    rating: 4,
+    comment:
+      "The iPhone 16 Pro is still the best smartphone, but I expected more. Yes, the processor is more powerful, the camera has improved, but there are few visual changes. I would like a bigger upgrade. If you have a 15 Pro, I don't see any point in updating.",
+    productId: 3,
+    userId: 3,
+  },
 ];
