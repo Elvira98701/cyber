@@ -16,7 +16,7 @@ export const SmallerBanners: React.FC<SmallerBannersProps> = ({
       )}
     >
       <h2 className="visually-hidden">Best Products</h2>
-      <div className="lg:col-span-2 lg:row-span-1 flex flex-col justify-center items-end px-6 py-14 md:p-14 bg-[url(/images/PlayStation.png)] bg-no-repeat bg-contain lg:bg-auto bg-left-bottom ">
+      <div className="lg:col-span-2 lg:row-span-1 flex flex-col justify-center items-end px-6 py-14 md:p-14 bg-[url(/images/PlayStation.png)] bg-no-repeat bg-[auto_200px] md:bg-contain lg:bg-auto bg-left-bottom ">
         <div className="max-w-48 sm:max-w-[338px]">
           <h3 className="font-medium text-3xl md:text-5xl mb-2">
             Playstation 5
@@ -27,7 +27,7 @@ export const SmallerBanners: React.FC<SmallerBannersProps> = ({
           </p>
         </div>
       </div>
-      <div className="lg:col-span-2 lg:row-span-2 bg-muted bg-[url(/images/MacBook.png)] bg-no-repeat bg-right bg-contain lg:bg-auto px-6 py-14 md:p-14 flex items-center">
+      <div className="lg:col-span-2 lg:row-span-2 bg-muted bg-[url(/images/MacBook.png)] bg-no-repeat bg-right bg-[auto_250px] md:bg-contain lg:bg-auto px-6 py-14 md:p-14 flex items-center">
         <div className="max-w-64 sm:max-w-96">
           <h3 className="text-5xl sm:text-6xl font-thin">
             Macbook <span className="font-bold">Air</span>
