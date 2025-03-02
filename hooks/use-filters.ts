@@ -25,6 +25,8 @@ export const useFilters = () => {
       string | string[]
     >;
 
+    console.log(params);
+
     const parsedFilters: Record<string, string[]> = {};
     Object.entries(params).forEach(([key, value]) => {
       if (Array.isArray(value)) {
@@ -58,9 +60,9 @@ export const useFilters = () => {
 
   useEffect(() => {
     const queryParams = {
+      ...selectedFilters,
       priceFrom: priceRange.min,
       priceTo: priceRange.max,
-      ...selectedFilters,
     };
 
     const queryString = qs.stringify(queryParams, {

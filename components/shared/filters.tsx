@@ -30,7 +30,7 @@ export const Filters: React.FC<FiltersProps> = ({ className, categoryId }) => {
             onChange={(e) =>
               setPriceRange((prev) => ({
                 ...prev,
-                min: Number(e.target.value) || undefined,
+                min: e.target.value ? Number(e.target.value) : undefined,
               }))
             }
           />
@@ -44,7 +44,7 @@ export const Filters: React.FC<FiltersProps> = ({ className, categoryId }) => {
             onChange={(e) =>
               setPriceRange((prev) => ({
                 ...prev,
-                max: Number(e.target.value) || undefined,
+                max: e.target.value ? Number(e.target.value) : undefined,
               }))
             }
           />
@@ -55,7 +55,9 @@ export const Filters: React.FC<FiltersProps> = ({ className, categoryId }) => {
           max={5000}
           step={10}
           value={[priceRange.min || 0, priceRange.max || 5000]}
-          onValueChange={([min, max]) => setPriceRange({ min, max })}
+          onValueChange={([min, max]) =>
+            setPriceRange((prev) => ({ ...prev, min, max }))
+          }
         />
       </div>
 
