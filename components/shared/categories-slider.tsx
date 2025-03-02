@@ -43,8 +43,8 @@ export const CategoriesSlider: React.FC<CategoriesSliderProps> = async ({
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-1 xl:-left-8 2xl:-left-12" />
+          <CarouselNext className="right-1 xl:-right-8 2xl:-right-12" />
         </Carousel>
       </Container>
     </section>

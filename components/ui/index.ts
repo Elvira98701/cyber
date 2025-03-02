@@ -8,7 +8,6 @@ export { Label } from "./label";
 export { Navigation } from "./navigation";
 export { Pagination } from "./pagination";
 export { RadioGroup } from "./radio-group";
-export { SearchInput } from "./search-input";
 export { Skeleton } from "./skeleton";
 export { Slider } from "./slider";
 export { ButtonLink } from "./button-link";

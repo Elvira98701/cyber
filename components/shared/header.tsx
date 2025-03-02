@@ -1,10 +1,13 @@
-import { INavItem } from "@/types";
-import { Navigation, SearchInput } from "../ui";
-import { Container } from "./container";
-import { Logo } from "./logo";
 import { cn } from "@/lib/utils";
-import { MobileMenu } from "./mobile-menu";
-import { UserActions } from "./user-actions";
+import { INavItem } from "@/types";
+import { Navigation } from "@/components/ui";
+import {
+  Container,
+  Logo,
+  MobileMenu,
+  UserActions,
+  SearchInput,
+} from "@/components/shared";
 
 interface HeaderProps {
   className?: string;

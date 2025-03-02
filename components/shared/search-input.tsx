@@ -6,9 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
-import { Input } from "./input";
 import { Api } from "@/services/api-client";
 import { Product } from "@prisma/client";
+import { Input } from "@/components/ui";
 
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;

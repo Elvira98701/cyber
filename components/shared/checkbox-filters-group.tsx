@@ -1,35 +1,34 @@
 "use client";
 
-import { FilterCheckbox, FilterCheckboxProps } from "./filter-checkbox";
-import { Button, SearchInput } from "../ui";
+import { FilterCheckbox } from "./filter-checkbox";
+import { Button, Input } from "../ui";
 import { useState } from "react";
 
 interface CheckboxFiltersGroupProps {
+  keyGroup: string;
   title: string;
-  items: FilterCheckboxProps[];
-  defaultItems: FilterCheckboxProps[];
+  items: string[];
   limit?: number;
   loading?: boolean;
-  onClickCheckbox?: (id: string) => void;
-  defaultValue?: string[];
-  selected?: Set<string>;
+  onClickCheckbox: (category: string, value: string) => void;
+  selected: string[];
   className?: string;
-  name?: string;
 }
 
 export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
+  keyGroup,
   title,
   items,
-  defaultItems,
   limit = 5,
   className,
-  // loading,
-  // onClickCheckbox,
-  // selected,
-  name,
+  loading,
+  onClickCheckbox,
+  selected,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+
+  if (loading) return <p>loading...</p>;
 
   const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -37,17 +36,19 @@ export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
 
   const list = showAll
     ? items.filter((item) =>
-        item.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+        item.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
       )
-    : defaultItems?.slice(0, limit);
+    : items?.slice(0, limit);
 
   return (
     <div className={className}>
-      <p className="font-bold mb-3 text-foreground">{title}</p>
+      <p className="font-bold mb-3 text-foreground capitalize">{title}</p>
 
       {showAll && (
         <div className="mb-5">
-          <SearchInput
+          <Input
+            type="search"
+            placeholder="Search"
             className="bg-background"
             onChange={onChangeSearchInput}
           />
@@ -58,12 +59,9 @@ export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
         {list.map((item, index) => (
           <FilterCheckbox
             key={index}
-            text={item.text}
-            value={item.value}
-            endAdornment={item.endAdornment}
-            checked={false}
-            onCheckedChange={(ids) => console.log(ids)}
-            name={name}
+            value={item}
+            checked={selected.includes(item)}
+            onCheckedChange={() => onClickCheckbox(keyGroup, item)}
           />
         ))}
       </div>

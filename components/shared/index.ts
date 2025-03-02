@@ -21,6 +21,7 @@ export { ProductsTabs } from "./products-tabs";
 export { Promo } from "./promo";
 export { RangeSlider } from "./range-slider";
 export { Reviews } from "./reviews";
+export { SearchInput } from "./search-input";
 export { SingleProduct } from "./single-product";
 export { SmallerBanners } from "./smaller-banners";
 export { SocialList } from "./social-list";
