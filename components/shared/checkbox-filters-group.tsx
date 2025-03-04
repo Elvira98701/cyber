@@ -9,7 +9,6 @@ interface CheckboxFiltersGroupProps {
   title: string;
   items: string[];
   limit?: number;
-  loading?: boolean;
   onClickCheckbox: (category: string, value: string) => void;
   selected: string[];
   className?: string;
@@ -21,14 +20,11 @@ export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
   items,
   limit = 5,
   className,
-  loading,
   onClickCheckbox,
   selected,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-
-  if (loading) return <p>loading...</p>;
 
   const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);

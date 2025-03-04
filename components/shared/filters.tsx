@@ -1,6 +1,6 @@
 "use client";
 
-import { Input } from "../ui";
+import { Input, Skeleton } from "../ui";
 import { RangeSlider } from "./range-slider";
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
 import { useFetchFilters, useFilters } from "@/hooks";
@@ -14,6 +14,25 @@ export const Filters: React.FC<FiltersProps> = ({ className, categoryId }) => {
   const { filters, loading } = useFetchFilters(String(categoryId));
   const { selectedFilters, priceRange, setPriceRange, toggleFilter } =
     useFilters();
+
+  if (loading) {
+    return (
+      <div>
+        <Skeleton className="w-14 h-5 mb-4 rounded-md" />
+        <div className="flex gap-3">
+          <Skeleton className="flex-1 h-9 mb-4 rounded-md" />
+          <Skeleton className="flex-1 h-9 mb-4 rounded-md" />
+        </div>
+        <Skeleton className="w-full h-6 mb-12 rounded-md" />
+        {Array.from({ length: 10 }, (_, index) => (
+          <Skeleton
+            key={index}
+            className="h-6 w-1/2 mb-4 rounded-[8px] bg-primary"
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className={className}>
@@ -70,7 +89,6 @@ export const Filters: React.FC<FiltersProps> = ({ className, categoryId }) => {
               className="mt-5"
               title={key}
               limit={4}
-              loading={loading}
               selected={selectedFilters[key] || []}
               items={values}
               onClickCheckbox={toggleFilter}

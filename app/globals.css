@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  font-family: var(--font-inter), sans-serif;
-  scrollbar-width: thin;
-  scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
-  overflow-x: hidden;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -77,6 +70,16 @@ html, body {
   * {
     @apply border-border;
   }
+
+  html,
+  body {
+    @apply w-screen overflow-x-hidden;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--foreground)) transparent;
+    scrollbar-gutter: stable;
+    font-family: var(--font-inter), sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

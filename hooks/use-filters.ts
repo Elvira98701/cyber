@@ -25,8 +25,6 @@ export const useFilters = () => {
       string | string[]
     >;
 
-    console.log(params);
-
     const parsedFilters: Record<string, string[]> = {};
     Object.entries(params).forEach(([key, value]) => {
       if (Array.isArray(value)) {

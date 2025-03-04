@@ -1,20 +1,33 @@
-import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 interface SortPopupProps {
   className?: string;
 }
 
-export const SortPopup: React.FC<SortPopupProps> = ({ className }) => {
+export const SortPopup: React.FC<SortPopupProps> = () => {
   return (
-    <div
-      className={cn(
-        "inline-flex items-center justify-between gap-1 border px-5 h-10 max-w-64 w-full rounded-[var(--radius)] cursor-pointer bg-background",
-        className
-      )}
-    >
-      <b className="font-normal text-[15px]">By rating</b>
-      <ChevronDown size={16} />
-    </div>
+    <Select>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="blueberry">Blueberry</SelectItem>
+          <SelectItem value="grapes">Grapes</SelectItem>
+          <SelectItem value="pineapple">Pineapple</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };

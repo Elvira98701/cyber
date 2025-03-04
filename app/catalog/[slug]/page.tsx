@@ -37,8 +37,7 @@ export default async function CategoryPage({
         <div className="flex-1">
           <header className="flex justify-between items-center mb-6">
             <p>
-              Selected Products:{" "}
-              <b className="text-foreground">{products.length}</b>
+              Products: <b className="text-foreground">{products.length}</b>
             </p>
             <SortPopup />
           </header>
