@@ -30,10 +30,10 @@ export default async function CategoryPage({
 
   return (
     <Container>
-      <div className="flex gap-8">
-        <div className="filters hidden sm:block">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+        <aside className="filters">
           <Filters categoryId={category.id} />
-        </div>
+        </aside>
         <div className="flex-1">
           <header className="flex justify-between items-center mb-6">
             <p>

@@ -1,7 +1,7 @@
 import { Api } from "@/services/api-client";
 import { useEffect, useState } from "react";
 
-type FiltersType = Record<string, string[]>;
+export type FiltersType = Record<string, string[]>;
 
 export const useFetchFilters = (categoryId: string) => {
   const [filters, setFilters] = useState<FiltersType>({});

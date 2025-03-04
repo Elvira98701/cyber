@@ -8,6 +8,7 @@ export { ContactUs } from "./contact-us";
 export { Container } from "./container";
 export { FilterCheckbox } from "./filter-checkbox";
 export { Filters } from "./filters";
+export { FiltersGroup } from "./filters-group";
 export { Footer } from "./footer";
 export { Header } from "./header";
 export { ImagesPresentation } from "./images-presentation";

@@ -95,7 +95,13 @@ p {
 }
 
 .filters {
-  width: clamp(10rem, 8.8rem + 6vw, 16rem);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .filters {
+    width: clamp(10rem, 8.8rem + 6vw, 16rem);
+  }
 }
 
 .scrollbar::-webkit-scrollbar {

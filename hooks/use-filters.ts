@@ -1,8 +1,9 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import qs from "qs";
+import { FiltersType } from "./use-fetch-filters";
 
-interface Price {
+export interface Price {
   min?: number;
   max?: number;
 }
@@ -11,9 +12,7 @@ export const useFilters = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [selectedFilters, setSelectedFilters] = useState<
-    Record<string, string[]>
-  >({});
+  const [selectedFilters, setSelectedFilters] = useState<FiltersType>({});
   const [priceRange, setPriceRange] = useState<Price>({
     min: undefined,
     max: undefined,
@@ -25,7 +24,7 @@ export const useFilters = () => {
       string | string[]
     >;
 
-    const parsedFilters: Record<string, string[]> = {};
+    const parsedFilters: FiltersType = {};
     Object.entries(params).forEach(([key, value]) => {
       if (Array.isArray(value)) {
         parsedFilters[key] = value;
