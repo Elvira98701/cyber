@@ -4,13 +4,16 @@ import {
   ProductList,
   SortPopup,
 } from "@/components/shared";
+import { findProducts, GetSearchParams } from "@/lib/find-products";
 import { prisma } from "@/prisma/prisma-client";
 import { notFound } from "next/navigation";
 
 export default async function CategoryPage({
   params,
+  searchParams,
 }: {
   params: { slug: string };
+  searchParams: GetSearchParams;
 }) {
   const category = await prisma.category.findUnique({
     where: { slug: params.slug },
@@ -20,9 +23,7 @@ export default async function CategoryPage({
     return notFound();
   }
 
-  const products = await prisma.product.findMany({
-    where: { categoryId: category.id },
-  });
+  const products = await findProducts(searchParams, category.id);
 
   if (!products) {
     return notFound();
