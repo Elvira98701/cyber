@@ -12,5 +12,6 @@ export const getCategories = cache(async (): Promise<Category[]> => {
   const categories = await prisma.category.findMany();
 
   if (!categories.length) notFound();
+
   return categories;
 });

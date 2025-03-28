@@ -1,6 +1,6 @@
-import { ButtonLink } from "@/components/ui";
+import { FC } from "react";
 import { cn } from "@/lib/utils";
-import React from "react";
+import { ButtonLink } from "@/components/ui";
 
 interface CartSidebarProps {
   totalAmount: number;
@@ -10,7 +10,7 @@ interface CartSidebarProps {
 const TAX = 50;
 const DELIVERY_PRICE = 29;
 
-export const CartSidebar: React.FC<CartSidebarProps> = ({
+export const CartSidebar: FC<CartSidebarProps> = ({
   totalAmount,
   className,
 }) => {
@@ -22,18 +22,18 @@ export const CartSidebar: React.FC<CartSidebarProps> = ({
     <aside className={cn("border rounded-md p-8", className)}>
       <h2 className="font-bold mb-10 text-xl">Order Summary</h2>
       <div className="mb-4 flex justify-between">
-        <b className="font-medium">Subtotal</b>{" "}
+        <b className="font-medium">Subtotal</b>
         <span>${totalAmount.toFixed(2)}</span>
       </div>
       <div className="mb-4 flex justify-between">
         <b className="font-normal">Estimated Tax</b> <span>${tax}</span>
       </div>
       <div className="mb-4 flex justify-between">
-        <b className="font-normal">Estimated shipping & Handling</b>{" "}
+        <b className="font-normal">Estimated shipping & Handling</b>
         <span>${deliveryPrice}</span>
       </div>
       <div className="mb-4 flex justify-between">
-        <b className="font-medium">Total</b>{" "}
+        <b className="font-medium">Total</b>
         <span>${totalPrice.toFixed(2)}</span>
       </div>
       <ButtonLink className="w-full" size="lg" href="/checkout">

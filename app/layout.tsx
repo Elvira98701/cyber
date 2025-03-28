@@ -4,7 +4,10 @@ import { inter } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "E-Store",
+  title: {
+    template: "%s | Cyber E-Store",
+    default: "Cyber E-Store",
+  },
   description: "E-commerce Website",
 };
 

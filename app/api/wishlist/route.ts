@@ -47,7 +47,10 @@ export async function POST(req: NextRequest) {
     });
 
     if (!product) {
-      return NextResponse.json({ message: "Товар не найден" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Product not found" },
+        { status: 404 }
+      );
     }
 
     const existingItem = await prisma.wishlistItem.findFirst({
@@ -87,7 +90,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("[WISHLIST_POST] Server error", error);
     return NextResponse.json(
-      { message: "Не удалось добавить товар в избранное" },
+      { message: "Couldn't add product to favorites" },
       { status: 500 }
     );
   }

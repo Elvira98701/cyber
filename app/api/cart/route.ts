@@ -49,7 +49,10 @@ export async function POST(req: NextRequest) {
     });
 
     if (!product) {
-      return NextResponse.json({ message: "Товар не найден" }, { status: 404 });
+      return NextResponse.json(
+        { message: "Product not found" },
+        { status: 404 }
+      );
     }
 
     const existingItem = await prisma.cartItem.findFirst({
@@ -86,7 +89,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("[CART_POST] Server error", error);
     return NextResponse.json(
-      { message: "Не удалось добавить товар в корзину" },
+      { message: "Couldn't add product to cart" },
       { status: 500 }
     );
   }
@@ -107,7 +110,7 @@ export async function PATCH(req: NextRequest) {
 
     if (!cartItem) {
       return NextResponse.json(
-        { message: "Товар в корзине не найден" },
+        { message: "The product was not found in the shopping cart" },
         { status: 404 }
       );
     }
@@ -123,7 +126,7 @@ export async function PATCH(req: NextRequest) {
   } catch (error) {
     console.error("[CART_PATCH] Server error", error);
     return NextResponse.json(
-      { message: "Не удалось обновить товар в корзине" },
+      { message: "Couldn't update the item in the cart" },
       { status: 500 }
     );
   }
@@ -144,7 +147,7 @@ export async function DELETE(req: NextRequest) {
 
     if (!cartItem) {
       return NextResponse.json(
-        { message: "Товар в корзине не найден" },
+        { message: "The product was not found in the shopping cart" },
         { status: 404 }
       );
     }
@@ -157,7 +160,7 @@ export async function DELETE(req: NextRequest) {
   } catch (error) {
     console.error("[CART_DELETE] Server error", error);
     return NextResponse.json(
-      { message: "Не удалось удалить товар из корзины" },
+      { message: "Couldn't delete an item from the shopping cart" },
       { status: 500 }
     );
   }

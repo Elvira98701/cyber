@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { FC, useEffect } from "react";
+import Image from "next/image";
+import toast from "react-hot-toast";
 import { Container } from "../container";
 import { CartSidebar } from "./cart-sidebar";
 import { CartList } from "./cart-list";
-import toast from "react-hot-toast";
 import { ButtonLink } from "@/components/ui";
-
-import Image from "next/image";
 import { CartLoader } from "./cart-loader";
 import { useShop } from "@/hooks/use-shop";
 
@@ -15,7 +14,7 @@ interface ShoppingCartProps {
   className?: string;
 }
 
-export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className }) => {
+export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
   const {
     totalAmount,
     items,
@@ -33,7 +32,6 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className }) => {
   const handleRemoveCartItem = async (id: number) => {
     try {
       await removeCartItem(id);
-
       toast.success("Product removed from cart");
     } catch (error) {
       toast.error("Couldn't remove product from cart");
@@ -47,7 +45,9 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className }) => {
   ) => {
     try {
       await updateItemQuantity({ cartItemId, quantity });
+      toast.success("Quantity updated");
     } catch (error) {
+      toast.error("Couldn't updated product quantity");
       console.error(error);
     }
   };

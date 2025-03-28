@@ -1,20 +1,21 @@
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface CategoryCardProps {
-  className?: string;
   link: string;
   image: string;
   title: string;
+  className?: string;
 }
 
-export const CategoryCard: React.FC<CategoryCardProps> = ({
-  className,
+export const CategoryCard: FC<CategoryCardProps> = ({
   link,
   image,
   title,
+  className,
 }) => {
   return (
     <div

@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { prisma } from "@/prisma/prisma-client";
 import {
   Container,
   Filters,
@@ -5,8 +8,10 @@ import {
   SortPopup,
 } from "@/components/shared";
 import { findProducts, GetSearchParams } from "@/lib/find-products";
-import { prisma } from "@/prisma/prisma-client";
-import { notFound } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Products",
+};
 
 export default async function CategoryPage({
   params,

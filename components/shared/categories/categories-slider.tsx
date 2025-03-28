@@ -1,5 +1,5 @@
+import { FC } from "react";
 import { cn } from "@/lib/utils";
-
 import { CategoryCard } from "./category-card";
 import { getCategories } from "@/services/categories";
 import { Container } from "../container";
@@ -15,7 +15,7 @@ interface CategoriesSliderProps {
   className?: string;
 }
 
-export const CategoriesSlider: React.FC<CategoriesSliderProps> = async ({
+export const CategoriesSlider: FC<CategoriesSliderProps> = async ({
   className,
 }) => {
   const categories = await getCategories();

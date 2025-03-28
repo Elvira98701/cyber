@@ -1,11 +1,11 @@
 "use client";
 
-import { CartStateItem } from "@/lib/get-cart-details";
+import { FC, useState } from "react";
 import Image from "next/image";
-import React, { useState } from "react";
+import { Trash2Icon } from "lucide-react";
+import { CartStateItem } from "@/lib/get-cart-details";
 import { CountButtons } from "../count-buttons";
 import { Button } from "@/components/ui";
-import { Trash2Icon } from "lucide-react";
 
 interface CartListProps {
   items: CartStateItem[];
@@ -18,7 +18,7 @@ interface CartListProps {
   className?: string;
 }
 
-export const CartList: React.FC<CartListProps> = ({
+export const CartList: FC<CartListProps> = ({
   items,
   loading,
   handleRemoveCartItem,
