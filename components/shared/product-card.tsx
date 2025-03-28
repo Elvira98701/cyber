@@ -1,25 +1,43 @@
+"use client";
+
 import { CardContent, Card } from "../ui/card";
 import Image from "next/image";
 import { ButtonLink } from "../ui";
 import { Heart } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useShop } from "@/hooks";
 
 interface ProductCardProps {
+  id: number;
   categorySlug: string;
   slug: string;
   name: string;
   price: number;
   imageUrl: string;
+  isFavorite: boolean;
   className?: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   categorySlug,
   slug,
   name,
   price,
   imageUrl,
+  isFavorite,
   className,
 }) => {
+  const { toggleWishlistItem } = useShop();
+
+  const handleToggleWishlistItem = async (productId: number) => {
+    try {
+      await toggleWishlistItem(productId);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className={className}>
       <Card className="py-6 px-4 text-center">
@@ -37,8 +55,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <ButtonLink href={`/catalog/${categorySlug}/${slug}`}>
               Buy Now
             </ButtonLink>
-            <button className="absolute top-0 right-0">
-              <Heart size={22} />
+            <button
+              className="absolute top-0 right-0"
+              onClick={() => handleToggleWishlistItem(id)}
+            >
+              <Heart
+                size={22}
+                className={cn("transition-colors", {
+                  "fill-red-700 text-red-700": isFavorite,
+                })}
+              />
             </button>
           </div>
         </CardContent>

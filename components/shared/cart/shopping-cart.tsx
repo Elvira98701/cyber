@@ -1,6 +1,5 @@
 "use client";
 
-import { useCart } from "@/hooks";
 import React, { useEffect } from "react";
 import { Container } from "../container";
 import { CartSidebar } from "./cart-sidebar";
@@ -10,6 +9,7 @@ import { ButtonLink } from "@/components/ui";
 
 import Image from "next/image";
 import { CartLoader } from "./cart-loader";
+import { useShop } from "@/hooks/use-shop";
 
 interface ShoppingCartProps {
   className?: string;
@@ -24,7 +24,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className }) => {
     updateItemQuantity,
     fetchCartItems,
     removeCartItem,
-  } = useCart();
+  } = useShop();
 
   useEffect(() => {
     fetchCartItems();

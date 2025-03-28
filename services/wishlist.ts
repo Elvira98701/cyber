@@ -5,12 +5,12 @@ export const getWishlist = async (): Promise<WishlistWithItems> => {
   return (await axiosInstance.get<WishlistWithItems>("/wishlist")).data;
 };
 
-export const toggleWishItem = async (
+export const toggleWishlistItem = async (
   productId: number
 ): Promise<WishlistWithItems> => {
   return (
     await axiosInstance.post<WishlistWithItems>("/wishlist", {
-      data: { productId },
+      productId,
     })
   ).data;
 };

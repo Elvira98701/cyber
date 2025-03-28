@@ -1,9 +1,12 @@
 "use client";
 
-import { Product, ProductSpec, Review } from "@prisma/client";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import toast from "react-hot-toast";
+import { useShop } from "@/hooks";
+import { Product, ProductSpec, Review } from "@prisma/client";
 import { Container } from "../container";
+import { Button } from "@/components/ui";
 import {
   ImagesPresentation,
   ProductColors,
@@ -12,9 +15,6 @@ import {
   ProductPrices,
   ProductSpecification,
 } from "@/components/shared/product";
-import { Button } from "@/components/ui";
-import { useCart } from "@/hooks";
-import toast from "react-hot-toast";
 
 interface ProductProps {
   className?: string;
@@ -25,7 +25,7 @@ export const SingleProduct: React.FC<ProductProps> = ({
   className,
   product,
 }) => {
-  const { addCartItem, loading } = useCart();
+  const { addCartItem, loading } = useShop();
   const [memoryIndex, setMemoryIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
 

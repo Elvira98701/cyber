@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
     }
 
     const updatedWishlist = await prisma.wishlist.findFirst({
-      where: { id: userWishlist.id },
+      where: { token },
       include: {
         items: {
           include: {
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("[WISHLIST_POST] Server error", error);
     return NextResponse.json(
-      { message: "Не удалось добавить товар в корзину" },
+      { message: "Не удалось добавить товар в избранное" },
       { status: 500 }
     );
   }

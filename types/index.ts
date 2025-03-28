@@ -29,5 +29,5 @@ export interface UpdateCartItemPayload {
 }
 
 export type WishlistWithItems = Wishlist & {
-  items: WishlistItem & { product: Product };
+  items: (WishlistItem & { product: Product })[];
 };
