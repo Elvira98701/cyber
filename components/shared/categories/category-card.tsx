@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Card } from "../ui";
-import { CardContent } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface CategoryCardProps {
   className?: string;

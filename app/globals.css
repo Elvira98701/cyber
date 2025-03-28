@@ -135,3 +135,15 @@ p {
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+#nprogress .bar {
+  @apply bg-primary !important;
+}
+
+#nprogress .peg {
+  @apply shadow-md shadow-primary !important;
+}
+
+#nprogress .spinner-icon {
+  @apply border-t-primary border-l-primary !important;
+}

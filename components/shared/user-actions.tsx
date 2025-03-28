@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui";
+import { Button, ButtonLink } from "../ui";
 import { Heart, ShoppingCart, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -13,9 +13,9 @@ export const UserActions: React.FC<UserActionsProps> = ({ className }) => {
       <Button variant="secondary" size="icon">
         <Heart size={24} />
       </Button>
-      <Button variant="secondary" size="icon">
+      <ButtonLink href="/cart" variant="secondary" size="icon" title="cart">
         <ShoppingCart size={24} />
-      </Button>
+      </ButtonLink>
       <Button variant="secondary" size="icon">
         <User size={24} />
       </Button>

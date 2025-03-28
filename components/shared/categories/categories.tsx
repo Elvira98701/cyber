@@ -1,6 +1,6 @@
 import React from "react";
-import { CategoryCard } from "./category-card";
 import { Category } from "@prisma/client";
+import { CategoryCard } from "./category-card";
 
 interface CategoriesProps {
   className?: string;

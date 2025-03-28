@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Header } from "@/components/shared";
+import { Footer, Header, Providers } from "@/components/shared";
 import { inter } from "./fonts";
 import "./globals.css";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <Header />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

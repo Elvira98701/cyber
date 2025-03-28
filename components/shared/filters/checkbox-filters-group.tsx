@@ -1,8 +1,8 @@
 "use client";
 
-import { FilterCheckbox } from "./filter-checkbox";
-import { Button, Input } from "../ui";
+import { Button, Input } from "@/components/ui";
 import { useState } from "react";
+import { FilterCheckbox } from "./filter-checkbox";
 
 interface CheckboxFiltersGroupProps {
   keyGroup: string;

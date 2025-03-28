@@ -1,5 +1,5 @@
+import { Checkbox, Label } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { Checkbox, Label } from "../ui";
 
 export interface FilterCheckboxProps {
   className?: string;

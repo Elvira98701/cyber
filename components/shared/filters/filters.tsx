@@ -1,17 +1,19 @@
 "use client";
 
 import { useFetchFilters, useFilters } from "@/hooks";
-import { FiltersGroup } from "./filters-group";
+
 import { useMedia } from "react-use";
+
+import { SlidersHorizontal } from "lucide-react";
+import { FiltersGroup } from "./filters-group";
+import { Dialog } from "@/components/ui";
 import {
-  Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
-import { SlidersHorizontal } from "lucide-react";
+} from "@/components/ui/dialog";
 
 interface FiltersProps {
   categoryId: number;

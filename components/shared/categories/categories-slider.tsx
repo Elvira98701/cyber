@@ -1,14 +1,15 @@
 import { cn } from "@/lib/utils";
-import { Carousel } from "../ui";
+
+import { CategoryCard } from "./category-card";
+import { getCategories } from "@/services/categories";
+import { Container } from "../container";
+import { Carousel } from "@/components/ui";
 import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../ui/carousel";
-import { Container } from "./container";
-import { CategoryCard } from "./category-card";
-import { getCategories } from "@/services/categories";
+} from "@/components/ui/carousel";
 
 interface CategoriesSliderProps {
   className?: string;

@@ -2,10 +2,10 @@
 
 import { FiltersType } from "@/hooks/use-fetch-filters";
 import React from "react";
-import { Input, Skeleton } from "../ui";
-import { RangeSlider } from "./range-slider";
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
 import { Price } from "@/hooks/use-filters";
+import { Input, RangeSlider } from "@/components/ui";
+import { FiltersSkeleton } from "./filters-skeleton";
 
 interface FiltersGroupProps {
   filters: FiltersType;
@@ -27,22 +27,7 @@ export const FiltersGroup: React.FC<FiltersGroupProps> = ({
   className,
 }) => {
   if (loading) {
-    return (
-      <div>
-        <Skeleton className="w-14 h-5 mb-4 rounded-md" />
-        <div className="flex gap-3">
-          <Skeleton className="flex-1 h-9 mb-4 rounded-md" />
-          <Skeleton className="flex-1 h-9 mb-4 rounded-md" />
-        </div>
-        <Skeleton className="w-full h-6 mb-12 rounded-md" />
-        {Array.from({ length: 10 }, (_, index) => (
-          <Skeleton
-            key={index}
-            className="h-6 w-full mb-4 rounded-[8px] bg-primary"
-          />
-        ))}
-      </div>
-    );
+    return <FiltersSkeleton />;
   }
 
   return (

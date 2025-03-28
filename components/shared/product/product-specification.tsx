@@ -11,7 +11,6 @@ export const ProductSpecification: React.FC<ProductSpecProps> = ({
   className,
   specs,
 }) => {
-  console.log(specs);
   return (
     <div className={cn("grid grid-cols-3 gap-4", className)}>
       {specs.map((spec) => (

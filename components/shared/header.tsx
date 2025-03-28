@@ -1,23 +1,16 @@
 import { cn } from "@/lib/utils";
-import { INavItem } from "@/types";
-import { Navigation } from "@/components/ui";
+import { Logo, Navigation } from "@/components/ui";
 import {
   Container,
-  Logo,
   MobileMenu,
   UserActions,
   SearchInput,
 } from "@/components/shared";
+import { navList } from "@/lib/constants";
 
 interface HeaderProps {
   className?: string;
 }
-
-const navList: INavItem[] = [
-  { id: "1", name: "Home", link: "/" },
-  { id: "2", name: "Catalog", link: "/catalog" },
-  { id: "3", name: "Contact us", link: "/contact" },
-];
 
 export const Header: React.FC<HeaderProps> = ({ className }) => {
   return (

@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
-import { Logo } from "./logo";
+
 import { SocialList } from "./social-list";
+import { Logo } from "@/components/ui";
 
 interface FooterProps {
   className?: string;
