@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui";
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
-import React from "react";
+import { Button } from "@/components/ui";
 
 interface ProductMemoriesProps {
   memoryValue: string;
@@ -9,7 +9,7 @@ interface ProductMemoriesProps {
   className?: string;
 }
 
-export const ProductMemories: React.FC<ProductMemoriesProps> = ({
+export const ProductMemories: FC<ProductMemoriesProps> = ({
   memoryValue,
   memories,
   handleChangeMemory,

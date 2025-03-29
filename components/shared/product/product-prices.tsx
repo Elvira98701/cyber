@@ -1,5 +1,5 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface ProductPricesProps {
   price: number;
@@ -7,7 +7,7 @@ interface ProductPricesProps {
   className?: string;
 }
 
-export const ProductPrices: React.FC<ProductPricesProps> = ({
+export const ProductPrices: FC<ProductPricesProps> = ({
   price,
   discount,
   className,

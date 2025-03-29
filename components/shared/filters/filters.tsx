@@ -1,9 +1,8 @@
 "use client";
 
+import type { FC } from "react";
 import { useFetchFilters, useFilters } from "@/hooks";
-
 import { useMedia } from "react-use";
-
 import { SlidersHorizontal } from "lucide-react";
 import { FiltersGroup } from "./filters-group";
 import { Dialog } from "@/components/ui";
@@ -19,7 +18,7 @@ interface FiltersProps {
   categoryId: number;
 }
 
-export const Filters: React.FC<FiltersProps> = ({ categoryId }) => {
+export const Filters: FC<FiltersProps> = ({ categoryId }) => {
   const { filters, loading } = useFetchFilters(String(categoryId));
   const { selectedFilters, priceRange, setPriceRange, toggleFilter } =
     useFilters();

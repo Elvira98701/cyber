@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import type { FC } from "react";
 
 interface LogoProps {
   className?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className }) => {
+export const Logo: FC<LogoProps> = ({ className }) => {
   return (
     <Link className={cn(className)} href="/">
       <svg

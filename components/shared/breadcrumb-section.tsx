@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import type { FC } from "react";
+import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -19,7 +20,7 @@ interface BreadcrumbSectionProps {
 const formatSegment = (segment: string) =>
   segment.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 
-export const BreadcrumbSection: React.FC<BreadcrumbSectionProps> = ({
+export const BreadcrumbSection: FC<BreadcrumbSectionProps> = ({
   className,
 }) => {
   const pathname = usePathname();
@@ -39,7 +40,7 @@ export const BreadcrumbSection: React.FC<BreadcrumbSectionProps> = ({
           const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
 
           return (
-            <React.Fragment key={index}>
+            <Fragment key={index}>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 {isLast ? (
@@ -50,7 +51,7 @@ export const BreadcrumbSection: React.FC<BreadcrumbSectionProps> = ({
                   </BreadcrumbLink>
                 )}
               </BreadcrumbItem>
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </BreadcrumbList>

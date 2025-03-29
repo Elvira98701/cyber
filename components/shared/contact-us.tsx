@@ -1,11 +1,11 @@
-import React from "react";
+import type { FC } from "react";
 import { Container } from "./container";
 
 interface ContactUsProps {
   className?: string;
 }
 
-export const ContactUs: React.FC<ContactUsProps> = ({ className }) => {
+export const ContactUs: FC<ContactUsProps> = ({ className }) => {
   return (
     <section className={className}>
       <Container>

@@ -1,11 +1,11 @@
 "use client";
 
+import type { FC } from "react";
 import { FiltersType } from "@/hooks/use-fetch-filters";
-import React from "react";
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
+import { FiltersSkeleton } from "./filters-skeleton";
 import { Price } from "@/hooks/use-filters";
 import { Input, RangeSlider } from "@/components/ui";
-import { FiltersSkeleton } from "./filters-skeleton";
 
 interface FiltersGroupProps {
   filters: FiltersType;
@@ -17,7 +17,7 @@ interface FiltersGroupProps {
   className?: string;
 }
 
-export const FiltersGroup: React.FC<FiltersGroupProps> = ({
+export const FiltersGroup: FC<FiltersGroupProps> = ({
   filters,
   loading,
   selectedFilters,

@@ -1,5 +1,6 @@
 "use client";
 
+import type { FC } from "react";
 import { CardContent, Card } from "../ui/card";
 import Image from "next/image";
 import { ButtonLink } from "../ui";
@@ -18,7 +19,7 @@ interface ProductCardProps {
   className?: string;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({
+export const ProductCard: FC<ProductCardProps> = ({
   id,
   categorySlug,
   slug,

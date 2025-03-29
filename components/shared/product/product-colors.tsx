@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui";
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-import React from "react";
+import { Button } from "@/components/ui";
 
 interface ProductColorsProps {
   colors: string[];
@@ -10,7 +10,7 @@ interface ProductColorsProps {
   className?: string;
 }
 
-export const ProductColors: React.FC<ProductColorsProps> = ({
+export const ProductColors: FC<ProductColorsProps> = ({
   colors,
   colorValue,
   handleChangeColor,

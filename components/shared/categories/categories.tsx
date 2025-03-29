@@ -1,13 +1,13 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Category } from "@prisma/client";
 import { CategoryCard } from "./category-card";
 
 interface CategoriesProps {
-  className?: string;
   categories: Category[];
+  className?: string;
 }
 
-export const Categories: FC<CategoriesProps> = ({ className, categories }) => {
+export const Categories: FC<CategoriesProps> = ({ categories, className }) => {
   return (
     <section className={className}>
       <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">

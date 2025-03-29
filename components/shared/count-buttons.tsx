@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import { Button } from "../ui";
 import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,7 @@ interface CountButtonsProps {
   className?: string;
 }
 
-export const CountButtons: React.FC<CountButtonsProps> = ({
+export const CountButtons: FC<CountButtonsProps> = ({
   value,
   cartItemId,
   quantity,

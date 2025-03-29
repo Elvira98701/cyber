@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
 import { ButtonLink } from "../ui";
@@ -6,7 +7,7 @@ interface PromoProps {
   className?: string;
 }
 
-export const Promo: React.FC<PromoProps> = ({ className }) => {
+export const Promo: FC<PromoProps> = ({ className }) => {
   return (
     <section
       className={cn(

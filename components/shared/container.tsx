@@ -1,10 +1,11 @@
+import type { FC, PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
 
 interface ContainerProps {
   className?: string;
 }
 
-export const Container: React.FC<React.PropsWithChildren<ContainerProps>> = ({
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   className,
   children,
 }) => {

@@ -1,5 +1,5 @@
+import type { FC } from "react";
 import { Review } from "@prisma/client";
-import React from "react";
 import { Container } from "./container";
 import { Star } from "lucide-react";
 
@@ -14,7 +14,7 @@ interface ReviewsProps {
   reviews: ExtendedReview[];
 }
 
-export const Reviews: React.FC<ReviewsProps> = ({ className, reviews }) => {
+export const Reviews: FC<ReviewsProps> = ({ className, reviews }) => {
   return (
     <section className={className}>
       <Container className="pt-20 flex flex-col gap-6">

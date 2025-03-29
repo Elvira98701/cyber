@@ -1,5 +1,6 @@
 "use client";
 
+import type { FC } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -10,7 +11,7 @@ interface BannerProps {
   className?: string;
 }
 
-export const Banner: React.FC<BannerProps> = ({ className }) => {
+export const Banner: FC<BannerProps> = ({ className }) => {
   return (
     <section className={cn("gradient overflow-hidden", className)}>
       <Container className="h-screen flex items-center justify-between flex-col lg:flex-row">
@@ -21,9 +22,9 @@ export const Banner: React.FC<BannerProps> = ({ className }) => {
             </span>
             <motion.h1
               className="text-7xl sm:text-8xl text-background font-bold"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.4 }}
             >
               <span className="font-thin">IPhone 14</span> Pro
             </motion.h1>

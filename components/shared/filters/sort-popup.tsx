@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { Select } from "@/components/ui";
 import {
   SelectContent,
@@ -12,7 +13,7 @@ interface SortPopupProps {
   className?: string;
 }
 
-export const SortPopup: React.FC<SortPopupProps> = () => {
+export const SortPopup: FC<SortPopupProps> = () => {
   return (
     <Select>
       <SelectTrigger className="w-[180px] shadow-none bg-background">

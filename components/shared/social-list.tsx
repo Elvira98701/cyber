@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import React from "react";
+import type { FC } from "react";
 
 interface SocialListProps {
   className?: string;
@@ -105,7 +105,7 @@ const socialList = [
   },
 ];
 
-export const SocialList: React.FC<SocialListProps> = ({ className }) => {
+export const SocialList: FC<SocialListProps> = ({ className }) => {
   return (
     <ul className={cn("flex gap-8", className)}>
       {socialList.map(({ id, name, link, icon }) => (

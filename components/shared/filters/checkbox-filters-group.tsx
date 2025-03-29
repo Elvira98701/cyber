@@ -1,27 +1,28 @@
 "use client";
 
-import { Button, Input } from "@/components/ui";
+import type { FC } from "react";
 import { useState } from "react";
+import { Button, Input } from "@/components/ui";
 import { FilterCheckbox } from "./filter-checkbox";
 
 interface CheckboxFiltersGroupProps {
   keyGroup: string;
   title: string;
   items: string[];
-  limit?: number;
   onClickCheckbox: (category: string, value: string) => void;
   selected: string[];
+  limit?: number;
   className?: string;
 }
 
-export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
+export const CheckboxFiltersGroup: FC<CheckboxFiltersGroupProps> = ({
   keyGroup,
   title,
   items,
-  limit = 5,
-  className,
   onClickCheckbox,
   selected,
+  limit = 5,
+  className,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const [searchValue, setSearchValue] = useState("");

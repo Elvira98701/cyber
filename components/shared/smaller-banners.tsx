@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "../ui";
 
@@ -5,9 +6,7 @@ interface SmallerBannersProps {
   className?: string;
 }
 
-export const SmallerBanners: React.FC<SmallerBannersProps> = ({
-  className,
-}) => {
+export const SmallerBanners: FC<SmallerBannersProps> = ({ className }) => {
   return (
     <section
       className={cn(

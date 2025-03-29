@@ -1,15 +1,15 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { ProductSpec } from "@prisma/client";
-import React from "react";
 
 interface ProductSpecProps {
-  className?: string;
   specs: ProductSpec[];
+  className?: string;
 }
 
-export const ProductSpecification: React.FC<ProductSpecProps> = ({
-  className,
+export const ProductSpecification: FC<ProductSpecProps> = ({
   specs,
+  className,
 }) => {
   return (
     <div className={cn("grid grid-cols-3 gap-4", className)}>

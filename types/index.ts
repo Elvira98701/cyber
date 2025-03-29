@@ -12,6 +12,14 @@ export interface INavItem {
   link: string;
 }
 
+export interface IPopularProduct {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  color: string;
+}
+
 export type CartWithItems = Cart & {
   items: (CartItem & { product: Product })[];
 };

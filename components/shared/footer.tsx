@@ -1,6 +1,6 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
-
 import { SocialList } from "./social-list";
 import { Logo } from "@/components/ui";
 
@@ -8,7 +8,7 @@ interface FooterProps {
   className?: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({ className }) => {
+export const Footer: FC<FooterProps> = ({ className }) => {
   return (
     <footer
       className={cn("bg-foreground text-background py-12 lg:py-28", className)}

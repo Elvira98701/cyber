@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import type { FC, PropsWithChildren } from "react";
 import { Toaster } from "react-hot-toast";
 import NextTopLoader from "nextjs-toploader";
-export const Providers: React.FC<React.PropsWithChildren> = ({ children }) => {
+
+export const Providers: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       {children}

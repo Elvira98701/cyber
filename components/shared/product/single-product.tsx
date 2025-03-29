@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import type { FC } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
 import { useShop } from "@/hooks";
@@ -17,19 +18,14 @@ import {
 } from "@/components/shared/product";
 
 interface ProductProps {
+  product: Product & { specs: ProductSpec[]; reviews: Review[] };
   className?: string;
-  product: (Product & { specs: ProductSpec[]; reviews: Review[] }) | null;
 }
 
-export const SingleProduct: React.FC<ProductProps> = ({
-  className,
-  product,
-}) => {
+export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
   const { addCartItem, loading } = useShop();
   const [memoryIndex, setMemoryIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
-
-  if (!product) return <div>not found</div>;
 
   const colors = product.colors;
   const memories = product.memory;

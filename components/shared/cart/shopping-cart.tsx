@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import type { FC } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { Container } from "../container";

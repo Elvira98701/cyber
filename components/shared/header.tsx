@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Logo, Navigation } from "@/components/ui";
 import {
@@ -12,7 +13,7 @@ interface HeaderProps {
   className?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ className }) => {
+export const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={cn(

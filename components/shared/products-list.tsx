@@ -1,5 +1,6 @@
 "use client";
 
+import type { FC } from "react";
 import { Suspense, useEffect } from "react";
 import { ProductCard } from "./product-card";
 import { Product } from "@prisma/client";
@@ -10,7 +11,7 @@ interface ProductListProps {
   categorySlug: string;
 }
 
-export const ProductList: React.FC<ProductListProps> = ({
+export const ProductList: FC<ProductListProps> = ({
   products,
   categorySlug,
 }) => {

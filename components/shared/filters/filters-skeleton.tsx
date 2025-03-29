@@ -1,13 +1,11 @@
+import type { FC } from "react";
 import { Skeleton } from "@/components/ui";
-import React from "react";
 
 interface FiltersSkeletonProps {
   className?: string;
 }
 
-export const FiltersSkeleton: React.FC<FiltersSkeletonProps> = ({
-  className,
-}) => {
+export const FiltersSkeleton: FC<FiltersSkeletonProps> = ({ className }) => {
   return (
     <div className={className}>
       <Skeleton className="w-14 h-5 mb-4 rounded-md" />

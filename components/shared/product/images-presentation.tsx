@@ -1,34 +1,35 @@
 "use client";
 
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface ImagesPresentationProps {
-  className?: string;
   images: string[];
+  className?: string;
 }
 
-export const ImagesPresentation: React.FC<ImagesPresentationProps> = ({
-  className,
+export const ImagesPresentation: FC<ImagesPresentationProps> = ({
   images,
+  className,
 }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
     <div className={cn("flex gap-4", className)}>
       <div className="flex flex-col gap-2">
-        {images.map((img, index) => (
+        {images.map((image, index) => (
           <motion.img
             key={index}
-            src={img}
+            src={image}
             alt={`Thumbnail ${index}`}
             className={`w-20 h-20 object-cover cursor-pointer rounded-lg border ${
-              selectedImage === img ? "border-primary" : "border-muted"
+              selectedImage === image ? "border-primary" : "border-muted"
             }`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setSelectedImage(img)}
+            onClick={() => setSelectedImage(image)}
           />
         ))}
       </div>

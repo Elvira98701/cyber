@@ -1,5 +1,6 @@
 "use client";
 
+import type { FC } from "react";
 import { InputHTMLAttributes, useRef, useState } from "react";
 import { useClickAway, useDebounce } from "react-use";
 import Link from "next/link";
@@ -14,10 +15,7 @@ interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
 }
 
-export const SearchInput: React.FC<SearchInputProps> = ({
-  className,
-  ...props
-}) => {
+export const SearchInput: FC<SearchInputProps> = ({ className, ...props }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [focused, setFocused] = useState(false);
   const [products, setProducts] = useState<

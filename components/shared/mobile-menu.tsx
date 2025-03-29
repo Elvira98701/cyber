@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import type { FC } from "react";
+import { useRef, useState } from "react";
 import { Button, Navigation } from "../ui";
 import { Menu, X } from "lucide-react";
 import { INavItem } from "@/types";
@@ -13,10 +14,7 @@ interface MobileMenuProps {
   navList: INavItem[];
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({
-  className,
-  navList,
-}) => {
+export const MobileMenu: FC<MobileMenuProps> = ({ className, navList }) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const ref = useRef(null);
 

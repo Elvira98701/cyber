@@ -1,16 +1,13 @@
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { BadgeCheck, Store, Truck } from "lucide-react";
-import React from "react";
 
 interface ProductInfoProps {
   stock: number;
   className?: string;
 }
 
-export const ProductInfo: React.FC<ProductInfoProps> = ({
-  stock,
-  className,
-}) => {
+export const ProductInfo: FC<ProductInfoProps> = ({ stock, className }) => {
   return (
     <div className={cn("flex flex-wrap gap-8", className)}>
       <div className="flex items-center gap-4">

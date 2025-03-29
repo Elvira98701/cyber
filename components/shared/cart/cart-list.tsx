@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import type { FC } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Trash2Icon } from "lucide-react";
 import { CartStateItem } from "@/lib/get-cart-details";
