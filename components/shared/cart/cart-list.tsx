@@ -33,10 +33,11 @@ export const CartList: FC<CartListProps> = ({
       {items.map((item) => (
         <li
           key={item.id}
-          className="flex items-center justify-between py-4 border-b"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-between py-4 border-b"
         >
           <div className="flex gap-4 items-center">
             <Image
+              className="max-w-[90px] w-full h-auto"
               src={item.images[0]}
               width={90}
               height={90}

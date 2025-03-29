@@ -112,7 +112,7 @@ export const useShopStore = create<ShopState>((set) => ({
       const data = await Api.wishlist.toggleWishlistItem(productId);
       set(getWishlistDetails(data));
     } catch (error) {
-      console.error("Ошибка при изменении избранного", error);
+      console.error(error);
       set({ error: true });
     } finally {
       set({ loading: false });

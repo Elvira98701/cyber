@@ -55,9 +55,11 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
 
   return (
     <section className={className}>
-      <Container className="flex gap-12 min-h-[50vh]">
+      <Container className="flex flex-col lg:flex-row gap-12 min-h-[50vh]">
         <div className="flex-1">
-          <h1 className="text-2xl font-semibold">Shopping Cart</h1>
+          <h1 className="text-2xl font-semibold text-center sm:text-left">
+            Shopping Cart
+          </h1>
           {loadingItems ? (
             <CartLoader className="flex justify-center items-center h-full" />
           ) : totalAmount > 0 ? (
