@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
 import { useShop } from "@/hooks";
@@ -23,9 +23,16 @@ interface ProductProps {
 }
 
 export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
-  const { addCartItem, loading } = useShop();
+  const { addCartItem, wishlist, toggleWishlistItem, fetchWishlist } =
+    useShop();
   const [memoryIndex, setMemoryIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingWishlist, setLoadingWishlist] = useState(false);
+
+  useEffect(() => {
+    fetchWishlist();
+  }, []);
 
   const colors = product.colors;
   const memories = product.memory;
@@ -38,7 +45,19 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
     setColorIndex(index);
   };
 
+  const handleToggleWishlistItem = async () => {
+    setLoadingWishlist(true);
+    try {
+      await toggleWishlistItem(product.id);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoadingWishlist(false);
+    }
+  };
+
   const handleAddCart = async () => {
+    setLoadingCart(true);
     try {
       await addCartItem({
         productId: product.id,
@@ -51,6 +70,8 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
     } catch (error) {
       toast.error("Couldn't add product to cart");
       console.error(error);
+    } finally {
+      setLoadingCart(false);
     }
   };
 
@@ -83,10 +104,18 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
           <ProductSpecification specs={product.specs} className="mt-6" />
           <p className="pt-6 mb-8">{product.description}</p>
           <div className="flex gap-4">
-            <Button size="lg" variant="outline" className="text-foreground">
-              Add to Wishlist
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-foreground"
+              onClick={handleToggleWishlistItem}
+              loading={loadingWishlist}
+            >
+              {wishlist.some((item) => item.productId === product.id)
+                ? "Remove from Wishlist"
+                : "Add to Wiashlist"}
             </Button>
-            <Button size="lg" onClick={handleAddCart} loading={loading}>
+            <Button size="lg" onClick={handleAddCart} loading={loadingCart}>
               Add to Cart
             </Button>
           </div>

@@ -66,7 +66,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
         {loading && (
           <span className="absolute top-0 left-0 size-full inline-flex justify-center items-center bg-primary rounded-md ">
-            <Loader className="w-5 h-5 animate-spin" />
+            <Loader className="w-5 h-5 animate-spin text-background" />
           </span>
         )}
       </Comp>
