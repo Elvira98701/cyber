@@ -5,7 +5,7 @@ import type { FC } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useShop } from "@/hooks";
-import { Preloader, WishlistItems } from "@/components/shared";
+import { EmptyWishlist, Preloader, WishlistItems } from "@/components/shared";
 import {
   Dialog,
   DialogContent,
@@ -43,13 +43,15 @@ export const WishlistModal: FC<WishlistModalProps> = ({ className }) => {
             My favorite products are stored here.
           </DialogDescription>
         </DialogHeader>
-        {loading ? (
-          <Preloader className="flex justify-center h-full" />
-        ) : wishlist.length > 0 ? (
-          <WishlistItems wishlist={wishlist} />
-        ) : (
-          <div>empty</div>
-        )}
+        <div className="max-h-[450px] overflow-y-auto">
+          {loading ? (
+            <Preloader className="flex justify-center h-full" />
+          ) : wishlist.length > 0 ? (
+            <WishlistItems wishlist={wishlist} />
+          ) : (
+            <EmptyWishlist />
+          )}
+        </div>
       </DialogContent>
     </Dialog>
   );

@@ -72,7 +72,9 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
           ) : (
             <div className="flex justify-center items-center flex-col gap-4 py-20">
               <Image src="/images/cart.svg" width={75} height={86} alt="cart" />
-              <h2>Your shopping cart is currently empty</h2>
+              <h2 className="font-bold">
+                Your shopping cart is currently empty
+              </h2>
               <p className="max-w-md text-center">
                 Before you start placing an order, you should add some items to
                 your shopping cart. You will find many interesting products on
