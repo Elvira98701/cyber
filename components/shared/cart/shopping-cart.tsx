@@ -19,7 +19,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
   const {
     totalAmount,
     items,
-    loading,
+    loadingCart,
     loadingItems,
     updateItemQuantity,
     fetchCartItems,
@@ -67,7 +67,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
               items={items}
               handleRemoveCartItem={handleRemoveCartItem}
               handleUpdateItemQuantity={handleUpdateItemQuantity}
-              loading={loading}
+              loading={loadingCart}
             />
           ) : (
             <div className="flex justify-center items-center flex-col gap-4 py-20">

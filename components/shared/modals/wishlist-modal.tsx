@@ -19,7 +19,7 @@ interface WishlistModalProps {
 }
 
 export const WishlistModal: FC<WishlistModalProps> = ({ className }) => {
-  const { loading, wishlist, fetchWishlist } = useShop();
+  const { loadingWishlist, wishlist, fetchWishlist } = useShop();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -44,7 +44,7 @@ export const WishlistModal: FC<WishlistModalProps> = ({ className }) => {
           </DialogDescription>
         </DialogHeader>
         <div className="max-h-[450px] overflow-y-auto">
-          {loading ? (
+          {loadingWishlist ? (
             <Preloader className="flex justify-center h-full" />
           ) : wishlist.length > 0 ? (
             <WishlistItems wishlist={wishlist} />

@@ -23,12 +23,16 @@ interface ProductProps {
 }
 
 export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
-  const { addCartItem, wishlist, toggleWishlistItem, fetchWishlist } =
-    useShop();
+  const {
+    addCartItem,
+    wishlist,
+    toggleWishlistItem,
+    fetchWishlist,
+    loadingCart,
+    loadingWishlist,
+  } = useShop();
   const [memoryIndex, setMemoryIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
-  const [loadingCart, setLoadingCart] = useState(false);
-  const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   useEffect(() => {
     fetchWishlist();
@@ -46,18 +50,14 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
   };
 
   const handleToggleWishlistItem = async () => {
-    setLoadingWishlist(true);
     try {
       await toggleWishlistItem(product.id);
     } catch (error) {
       console.error(error);
-    } finally {
-      setLoadingWishlist(false);
     }
   };
 
   const handleAddCart = async () => {
-    setLoadingCart(true);
     try {
       await addCartItem({
         productId: product.id,
@@ -70,8 +70,6 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
     } catch (error) {
       toast.error("Couldn't add product to cart");
       console.error(error);
-    } finally {
-      setLoadingCart(false);
     }
   };
 
@@ -107,7 +105,11 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
             <Button
               size="lg"
               variant="outline"
-              className="text-foreground"
+              className={cn("text-foreground", {
+                "text-red-600": wishlist.some(
+                  (item) => item.productId === product.id
+                ),
+              })}
               onClick={handleToggleWishlistItem}
               loading={loadingWishlist}
             >

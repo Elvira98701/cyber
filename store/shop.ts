@@ -6,7 +6,8 @@ import { getWishlistDetails } from "@/lib";
 import { WishlistStateItem } from "@/lib/get-wishlist-details";
 
 export interface ShopState {
-  loading: boolean;
+  loadingCart: boolean;
+  loadingWishlist: boolean;
   loadingItems: boolean;
   error: boolean;
   totalAmount: number;
@@ -24,7 +25,8 @@ const initialState = {
   items: [],
   wishlist: [],
   error: false,
-  loading: false,
+  loadingCart: false,
+  loadingWishlist: false,
   loadingItems: true,
   totalAmount: 0,
 };
@@ -47,21 +49,21 @@ export const useShopStore = create<ShopState>((set) => ({
 
   updateItemQuantity: async (values: UpdateCartItemPayload) => {
     try {
-      set({ loading: true, error: false });
+      set({ loadingCart: true, error: false });
       const data = await Api.cart.updateItemQuantity(values);
       set(getCartDetails(data));
     } catch (error) {
       console.error(error);
       set({ error: true });
     } finally {
-      set({ loading: false });
+      set({ loadingCart: false });
     }
   },
 
   removeCartItem: async (id: number) => {
     try {
       set((state) => ({
-        loading: true,
+        loadingCart: true,
         error: false,
         items: state.items.map((item) =>
           item.id === id ? { ...item, disabled: true } : item
@@ -74,7 +76,7 @@ export const useShopStore = create<ShopState>((set) => ({
       set({ error: true });
     } finally {
       set((state) => ({
-        loading: false,
+        loadingCart: false,
         items: state.items.map((item) => ({ ...item, disabled: false })),
       }));
     }
@@ -82,40 +84,40 @@ export const useShopStore = create<ShopState>((set) => ({
 
   addCartItem: async (values: AddCartItemPayload) => {
     try {
-      set({ loading: true, error: false });
+      set({ loadingCart: true, error: false });
       const data = await Api.cart.addCartItem(values);
       set(getCartDetails(data));
     } catch (error) {
       console.error(error);
       set({ error: true });
     } finally {
-      set({ loading: false });
+      set({ loadingCart: false });
     }
   },
 
   fetchWishlist: async () => {
     try {
-      set({ loading: true, error: false });
+      set({ loadingWishlist: true, error: false });
       const data = await Api.wishlist.getWishlist();
       set(getWishlistDetails(data));
     } catch (error) {
       console.error(error);
       set({ error: true });
     } finally {
-      set({ loading: false });
+      set({ loadingWishlist: false });
     }
   },
 
   toggleWishlistItem: async (productId: number) => {
     try {
-      set({ loading: true, error: false });
+      set({ loadingWishlist: true, error: false });
       const data = await Api.wishlist.toggleWishlistItem(productId);
       set(getWishlistDetails(data));
     } catch (error) {
       console.error(error);
       set({ error: true });
     } finally {
-      set({ loading: false });
+      set({ loadingWishlist: false });
     }
   },
 }));

@@ -8,7 +8,7 @@ import { WishlistItems } from "./wishlist-items";
 import { EmptyWishlist } from "./empty-wishlist";
 
 export const WishlistWrapper: FC = () => {
-  const { loading, wishlist, fetchWishlist } = useShop();
+  const { loadingWishlist, wishlist, fetchWishlist } = useShop();
 
   useEffect(() => {
     fetchWishlist();
@@ -16,7 +16,7 @@ export const WishlistWrapper: FC = () => {
 
   return (
     <>
-      {loading ? (
+      {loadingWishlist ? (
         <Preloader className="flex justify-center items-center h-full min-h-96" />
       ) : wishlist.length > 0 ? (
         <WishlistItems wishlist={wishlist} />
