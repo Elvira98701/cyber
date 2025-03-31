@@ -1,14 +1,14 @@
-import { WishlistStateItem } from "@/lib/get-wishlist-details";
-import React from "react";
-import { ProductCard } from "./product-card";
+import type { FC } from "react";
 import { cn } from "@/lib/utils";
+import { WishlistStateItem } from "@/lib/get-wishlist-details";
+import { ProductCard } from "../product-card";
 
 interface WishlistItemsProps {
   wishlist: WishlistStateItem[];
   className?: string;
 }
 
-export const WishlistItems: React.FC<WishlistItemsProps> = ({
+export const WishlistItems: FC<WishlistItemsProps> = ({
   wishlist,
   className,
 }) => {
