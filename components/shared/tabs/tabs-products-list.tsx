@@ -30,7 +30,7 @@ export const TabsProductsList: FC<TabsListProps> = ({
 
   useEffect(() => {
     fetchWishlist();
-  }, []);
+  }, [fetchWishlist]);
 
   return (
     <Tabs defaultValue="new" className={className}>

@@ -8,8 +8,8 @@ import { Container } from "../container";
 import { CartSidebar } from "./cart-sidebar";
 import { CartList } from "./cart-list";
 import { ButtonLink } from "@/components/ui";
-import { CartLoader } from "./cart-loader";
 import { useShop } from "@/hooks/use-shop";
+import { Preloader } from "../preloader";
 
 interface ShoppingCartProps {
   className?: string;
@@ -28,7 +28,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
 
   useEffect(() => {
     fetchCartItems();
-  }, []);
+  }, [fetchCartItems]);
 
   const handleRemoveCartItem = async (id: number) => {
     try {
@@ -61,7 +61,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
             Shopping Cart
           </h1>
           {loadingItems ? (
-            <CartLoader className="flex justify-center items-center h-full min-h-96" />
+            <Preloader className="flex justify-center items-center h-full min-h-96" />
           ) : totalAmount > 0 ? (
             <CartList
               items={items}

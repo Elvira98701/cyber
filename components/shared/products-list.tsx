@@ -19,7 +19,7 @@ export const ProductList: FC<ProductListProps> = ({
 
   useEffect(() => {
     fetchWishlist();
-  }, []);
+  }, [fetchWishlist]);
 
   return (
     <Suspense fallback={<p>Loading products...</p>}>

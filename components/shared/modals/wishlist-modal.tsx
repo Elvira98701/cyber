@@ -1,18 +1,18 @@
 "use client";
 
-import { Dialog } from "@/components/ui";
+import { useEffect } from "react";
+import type { FC } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { useShop } from "@/hooks";
+import { Preloader, WishlistItems } from "@/components/shared";
 import {
+  Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useShop } from "@/hooks";
-import { cn } from "@/lib/utils";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, type FC } from "react";
-import { CartLoader } from "../cart/cart-loader";
-import { WishlistItems } from "../wishlist-items";
 
 interface WishlistModalProps {
   className?: string;
@@ -25,9 +25,10 @@ export const WishlistModal: FC<WishlistModalProps> = ({ className }) => {
 
   useEffect(() => {
     fetchWishlist();
-  }, []);
+  }, [fetchWishlist]);
 
   const open = pathname === "/wishlist";
+
   return (
     <Dialog open={open} onOpenChange={() => router.back()}>
       <DialogContent
@@ -43,7 +44,7 @@ export const WishlistModal: FC<WishlistModalProps> = ({ className }) => {
           </DialogDescription>
         </DialogHeader>
         {loading ? (
-          <CartLoader className="flex justify-center h-full" />
+          <Preloader className="flex justify-center h-full" />
         ) : wishlist.length > 0 ? (
           <WishlistItems wishlist={wishlist} />
         ) : (

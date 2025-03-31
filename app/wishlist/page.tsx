@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/shared";
+
+export const metadata: Metadata = {
+  title: "Wishlist",
+};
 
 export default function Wishlist() {
   return (
