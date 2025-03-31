@@ -6,6 +6,8 @@ export type WishlistStateItem = {
   name: string;
   images: string[];
   price: number;
+  slug: string;
+  categorySlug: string;
 };
 
 interface ReturnProps {
@@ -19,6 +21,8 @@ export const getWishlistDetails = (data: WishlistWithItems): ReturnProps => {
     name: item.product.name,
     images: item.product.images,
     price: item.product.price,
+    slug: item.product.slug,
+    categorySlug: item.product.category.slug,
   }));
 
   return { wishlist };

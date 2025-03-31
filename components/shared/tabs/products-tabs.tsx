@@ -19,6 +19,7 @@ export const ProductsTabs: FC<ProductsTabsProps> = async ({ className }) => {
       price: true,
       category: { select: { slug: true } },
     },
+    take: 15,
   });
 
   if (!products) {

@@ -61,7 +61,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
             Shopping Cart
           </h1>
           {loadingItems ? (
-            <CartLoader className="flex justify-center items-center h-full" />
+            <CartLoader className="flex justify-center items-center h-full min-h-96" />
           ) : totalAmount > 0 ? (
             <CartList
               items={items}

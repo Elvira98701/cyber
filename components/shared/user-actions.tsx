@@ -10,9 +10,14 @@ interface UserActionsProps {
 export const UserActions: FC<UserActionsProps> = ({ className }) => {
   return (
     <div className={cn("", className)}>
-      <Button variant="secondary" size="icon">
+      <ButtonLink
+        href="/wishlist"
+        variant="secondary"
+        size="icon"
+        title="wishlist"
+      >
         <Heart size={24} />
-      </Button>
+      </ButtonLink>
       <ButtonLink href="/cart" variant="secondary" size="icon" title="cart">
         <ShoppingCart size={24} />
       </ButtonLink>
