@@ -60,7 +60,11 @@ const config: Config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    function ({ addVariant }) {
+    function ({
+      addVariant,
+    }: {
+      addVariant: (name: string, value: string) => void;
+    }) {
       addVariant("hover-hover", "@media (hover: hover) { &:hover }");
     },
   ],
