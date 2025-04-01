@@ -58,6 +58,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addVariant }) {
+      addVariant("hover-hover", "@media (hover: hover) { &:hover }");
+    },
+  ],
 };
 export default config;

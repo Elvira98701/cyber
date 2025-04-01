@@ -41,14 +41,14 @@ export const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <div className={className}>
-      <Card className="py-6 px-4 text-center">
+      <Card className="py-6 px-3 text-center">
         <CardContent className="flex flex-col items-center justify-between gap-4 relative min-h-96">
           <Image
             src={imageUrl}
             width={400}
             height={400}
             alt={name}
-            className="p-4 bg-background rounded-lg object-contain"
+            className="p-4 bg-background rounded-lg object-contain size-full"
           />
           <div className="flex flex-col items-center justify-center gap-2">
             <h3 className="font-medium">{name}</h3>

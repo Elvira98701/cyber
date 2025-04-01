@@ -20,6 +20,7 @@ export { UserActions } from "./user-actions";
 
 export * from "./cart";
 export * from "./categories";
+export * from "./checkout";
 export * from "./filters";
 export * from "./modals";
 export * from "./product";

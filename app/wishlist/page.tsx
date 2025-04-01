@@ -10,7 +10,9 @@ export default function Wishlist() {
     <main className="pt-48 pb-28">
       <section className="min-h-[50vh]">
         <Container>
-          <h1 className="text-2xl font-bold mb-10">Wishlist</h1>
+          <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">
+            My <span className="font-bold">Wishlist</span>
+          </h1>
           <WishlistWrapper />
         </Container>
       </section>
