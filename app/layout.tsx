@@ -21,12 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <Header />
         <Providers>
+          <Header />
           {children}
           {modal}
+          <Footer />
         </Providers>
-        <Footer />
       </body>
     </html>
   );

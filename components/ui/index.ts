@@ -17,3 +17,4 @@ export { Select } from "./select";
 export { Skeleton } from "./skeleton";
 export { Slider } from "./slider";
 export { Tabs } from "./tabs";
+export { Textarea } from "./textarea";

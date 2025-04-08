@@ -55,7 +55,7 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
 
   return (
     <section className={className}>
-      <Container className="flex flex-col lg:flex-row gap-12 min-h-[50vh]">
+      <Container className="flex flex-col lg:flex-row gap-10 min-h-[50vh]">
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10 text-center sm:text-left">
             Shopping <span className="font-bold">Cart</span>

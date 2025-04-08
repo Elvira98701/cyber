@@ -1,8 +1,10 @@
 export { Banner } from "./banner";
 export { BreadcrumbSection } from "./breadcrumb-section";
+export { ClearButton } from "./clear-button";
 export { ContactUs } from "./contact-us";
 export { Container } from "./container";
 export { CountButtons } from "./count-buttons";
+export { ErrorText } from "./error-text";
 export { Footer } from "./footer";
 export { Header } from "./header";
 export { MobileMenu } from "./mobile-menu";
@@ -22,6 +24,7 @@ export * from "./cart";
 export * from "./categories";
 export * from "./checkout";
 export * from "./filters";
+export * from "./form";
 export * from "./modals";
 export * from "./product";
 export * from "./tabs";
