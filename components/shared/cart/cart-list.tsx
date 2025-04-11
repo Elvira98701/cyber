@@ -74,6 +74,7 @@ export const CartList: FC<CartListProps> = ({
                 handleRemoveCartItem(item.id);
               }}
               loading={activeId === item.id ? loading : false}
+              type="button"
             >
               <Trash2Icon />
             </Button>

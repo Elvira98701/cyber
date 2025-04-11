@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, type FC } from "react";
+import { useEffect, useState } from "react";
+import type { FC } from "react";
 import { Container } from "../container";
 import { useShop } from "@/hooks";
 import { CartSidebar } from "../cart";
@@ -10,6 +11,8 @@ import { CheckoutPersonalForm } from "./checkout-personal-form";
 import { CheckoutAddressForm } from "./checkout-address-form";
 import { checkoutFormSchema, CheckoutFormValues } from "./checkout-form-schema";
 import { Preloader } from "../preloader";
+import { createOrder } from "@/app/actions";
+import toast from "react-hot-toast";
 
 interface CheckoutProps {
   className?: string;
@@ -17,6 +20,7 @@ interface CheckoutProps {
 
 export const Checkout: FC<CheckoutProps> = ({ className }) => {
   const { totalAmount, fetchCartItems, loadingItems } = useShop();
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     fetchCartItems();
@@ -34,8 +38,29 @@ export const Checkout: FC<CheckoutProps> = ({ className }) => {
     },
   });
 
-  const onSubmit: SubmitHandler<CheckoutFormValues> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<CheckoutFormValues> = async (data) => {
+    try {
+      setSubmitting(true);
+      const url = await createOrder(data);
+
+      toast.error(
+        "The order was successfully placed! 📝 Switching to payment... ",
+        {
+          icon: "✅",
+        }
+      );
+
+      if (url) {
+        location.href = url;
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Couldn't create an order", {
+        icon: "❌",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -65,7 +90,11 @@ export const Checkout: FC<CheckoutProps> = ({ className }) => {
                 {loadingItems ? (
                   <Preloader className="flex justify-center items-center h-full" />
                 ) : (
-                  <CartSidebar totalAmount={totalAmount} type="form" />
+                  <CartSidebar
+                    totalAmount={totalAmount}
+                    type="form"
+                    loading={submitting}
+                  />
                 )}
               </div>
             </div>

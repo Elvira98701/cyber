@@ -5,6 +5,7 @@ import { Button, ButtonLink } from "@/components/ui";
 interface CartSidebarProps {
   totalAmount: number;
   type?: "default" | "form";
+  loading?: boolean;
   className?: string;
 }
 
@@ -14,6 +15,7 @@ const DELIVERY_PRICE = 29;
 export const CartSidebar: FC<CartSidebarProps> = ({
   totalAmount,
   type = "default",
+  loading = false,
   className,
 }) => {
   const tax = totalAmount > 0 ? TAX : 0;
@@ -39,7 +41,7 @@ export const CartSidebar: FC<CartSidebarProps> = ({
         <span>${totalPrice.toFixed(2)}</span>
       </div>
       {type === "form" ? (
-        <Button className="w-full" size="lg" type="submit">
+        <Button className="w-full" size="lg" type="submit" loading={loading}>
           Place an order
         </Button>
       ) : (

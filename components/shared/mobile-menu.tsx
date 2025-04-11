@@ -4,7 +4,7 @@ import type { FC } from "react";
 import { useRef, useState } from "react";
 import { Button, Navigation } from "../ui";
 import { Menu, X } from "lucide-react";
-import { INavItem } from "@/types";
+import { INavItem } from "@/@types";
 import { AnimatePresence, motion } from "motion/react";
 import { UserActions } from "./user-actions";
 import { useClickAway } from "react-use";
@@ -24,7 +24,11 @@ export const MobileMenu: FC<MobileMenuProps> = ({ className, navList }) => {
 
   return (
     <div className={className}>
-      <Button variant="secondary" onClick={() => setIsOpenMenu(true)}>
+      <Button
+        variant="secondary"
+        onClick={() => setIsOpenMenu(true)}
+        type="button"
+      >
         <Menu />
       </Button>
       <AnimatePresence>
@@ -46,6 +50,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ className, navList }) => {
               className="absolute top-4 right-4"
               onClick={() => setIsOpenMenu(false)}
               size="icon"
+              type="button"
             >
               <X />
             </Button>

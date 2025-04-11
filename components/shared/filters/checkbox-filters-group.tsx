@@ -65,7 +65,11 @@ export const CheckboxFiltersGroup: FC<CheckboxFiltersGroupProps> = ({
 
       {items.length > limit && (
         <div className={showAll ? "border-t mt-4" : ""}>
-          <Button onClick={() => setShowAll(!showAll)} className="mt-3">
+          <Button
+            onClick={() => setShowAll(!showAll)}
+            className="mt-3"
+            type="button"
+          >
             {showAll ? "- Hide" : "+ Show all"}
           </Button>
         </div>

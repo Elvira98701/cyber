@@ -1,14 +1,14 @@
 "use client";
 
-import React from "react";
+import type { FC } from "react";
 import { AddressSuggestions } from "react-dadata";
 import "react-dadata/dist/react-dadata.css";
 
-interface Props {
+interface AdressInputProps {
   onChange?: (value?: string) => void;
 }
 
-export const AdressInput: React.FC<Props> = ({ onChange }) => {
+export const AdressInput: FC<AdressInputProps> = ({ onChange }) => {
   return (
     <AddressSuggestions
       token={process.env.NEXT_PUBLIC_DADATA_API_KEY!}

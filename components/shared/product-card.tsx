@@ -59,6 +59,7 @@ export const ProductCard: FC<ProductCardProps> = ({
             <button
               className="absolute top-0 right-0"
               onClick={() => handleToggleWishlistItem(id)}
+              type="button"
             >
               <Heart
                 size={22}

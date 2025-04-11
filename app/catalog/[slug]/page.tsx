@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { prisma } from "@/prisma/prisma-client";
 import {
   Container,
   Filters,
   ProductList,
   SortPopup,
 } from "@/components/shared";
-import { findProducts, GetSearchParams } from "@/lib/find-products";
+import { GetSearchParams } from "@/lib/find-products";
+import { getCategoryWithProducts } from "@/lib";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -20,19 +20,13 @@ export default async function CategoryPage({
   params: { slug: string };
   searchParams: GetSearchParams;
 }) {
-  const category = await prisma.category.findUnique({
-    where: { slug: params.slug },
-  });
+  const data = await getCategoryWithProducts(params.slug, searchParams);
 
-  if (!category) {
+  if (!data) {
     return notFound();
   }
 
-  const products = await findProducts(searchParams, category.id);
-
-  if (!products) {
-    return notFound();
-  }
+  const { category, products } = data;
 
   return (
     <Container>

@@ -1,13 +1,19 @@
-import type { FC } from "react";
-import { Button, ButtonLink } from "../ui";
-import { Heart, ShoppingCart, User } from "lucide-react";
+"use client";
+
+import { useState, type FC } from "react";
+import { ButtonLink } from "../ui";
+import { Heart, ShoppingCart } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ProfileButton } from "./profile-button";
+import { AuthModal } from "./modals";
 
 interface UserActionsProps {
   className?: string;
 }
 
 export const UserActions: FC<UserActionsProps> = ({ className }) => {
+  const [openAuthModal, setOpenAuthModal] = useState(false);
+
   return (
     <div className={cn("", className)}>
       <ButtonLink
@@ -21,9 +27,8 @@ export const UserActions: FC<UserActionsProps> = ({ className }) => {
       <ButtonLink href="/cart" variant="secondary" size="icon" title="cart">
         <ShoppingCart size={24} />
       </ButtonLink>
-      <Button variant="secondary" size="icon">
-        <User size={24} />
-      </Button>
+      <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
+      <AuthModal open={openAuthModal} onClose={() => setOpenAuthModal(false)} />
     </div>
   );
 };

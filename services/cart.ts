@@ -2,7 +2,7 @@ import {
   AddCartItemPayload,
   CartWithItems,
   UpdateCartItemPayload,
-} from "@/types";
+} from "@/@types";
 import { axiosInstance } from "./instance";
 
 export const getCart = async (): Promise<CartWithItems> => {

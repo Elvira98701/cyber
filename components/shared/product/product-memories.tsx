@@ -26,6 +26,7 @@ export const ProductMemories: FC<ProductMemoriesProps> = ({
               "bg-primary text-background": memoryValue === memory,
             })}
             onClick={() => handleChangeMemory(index)}
+            type="button"
           >
             {memory}
           </Button>

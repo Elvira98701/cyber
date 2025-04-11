@@ -27,6 +27,7 @@ export const ProductColors: FC<ProductColorsProps> = ({
               size="icon"
               className={"w-8 h-8 rounded-full"}
               onClick={() => handleChangeColor(index)}
+              type="button"
             >
               {color === colorValue && <Check className="text-primary" />}
             </Button>

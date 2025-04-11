@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { INavItem } from "@/types";
+import { INavItem } from "@/@types";
 import Link from "next/link";
 
 interface NavigationProps {

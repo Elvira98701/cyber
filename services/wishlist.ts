@@ -1,4 +1,4 @@
-import { WishlistWithItems } from "@/types";
+import { WishlistWithItems } from "@/@types";
 import { axiosInstance } from "./instance";
 
 export const getWishlist = async (): Promise<WishlistWithItems> => {

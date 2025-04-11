@@ -30,6 +30,7 @@ export const CountButtons: FC<CountButtonsProps> = ({
         onClick={() => {
           handleUpdateItemQuantity(cartItemId, quantity - 1);
         }}
+        type="button"
       >
         <Minus size={12} />
       </Button>
@@ -42,6 +43,7 @@ export const CountButtons: FC<CountButtonsProps> = ({
         onClick={() => {
           handleUpdateItemQuantity(cartItemId, quantity + 1);
         }}
+        type="button"
       >
         <Plus />
       </Button>

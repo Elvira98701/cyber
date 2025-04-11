@@ -1,4 +1,7 @@
+"use client";
+
 import type { FC } from "react";
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Logo, Navigation } from "@/components/ui";
 import {
@@ -8,12 +11,22 @@ import {
   SearchInput,
 } from "@/components/shared";
 import { navList } from "@/lib/constants";
+import { useSearchParams } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface HeaderProps {
   className?: string;
 }
 
 export const Header: FC<HeaderProps> = ({ className }) => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.has("paid")) {
+      toast.success("The order has been successfully paid for!");
+    }
+  }, [searchParams]);
+
   return (
     <header
       className={cn(

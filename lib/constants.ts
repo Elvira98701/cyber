@@ -1,4 +1,4 @@
-import { INavItem, IPopularProduct } from "@/types";
+import { INavItem, IPopularProduct } from "@/@types";
 
 export const navList: INavItem[] = [
   { id: "1", name: "Home", link: "/" },

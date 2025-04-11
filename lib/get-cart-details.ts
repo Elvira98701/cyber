@@ -1,4 +1,4 @@
-import { CartWithItems } from "@/types";
+import { CartWithItems } from "@/@types";
 
 export type CartStateItem = {
   id: number;

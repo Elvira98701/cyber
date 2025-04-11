@@ -112,12 +112,18 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
               })}
               onClick={handleToggleWishlistItem}
               loading={loadingWishlist}
+              type="button"
             >
               {wishlist.some((item) => item.productId === product.id)
                 ? "Remove from Wishlist"
                 : "Add to Wiashlist"}
             </Button>
-            <Button size="lg" onClick={handleAddCart} loading={loadingCart}>
+            <Button
+              size="lg"
+              onClick={handleAddCart}
+              loading={loadingCart}
+              type="button"
+            >
               Add to Cart
             </Button>
           </div>

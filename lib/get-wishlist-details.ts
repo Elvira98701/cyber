@@ -1,4 +1,4 @@
-import { WishlistWithItems } from "@/types";
+import { WishlistWithItems } from "@/@types";
 
 export type WishlistStateItem = {
   id: number;
