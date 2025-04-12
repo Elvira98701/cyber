@@ -1,3 +1,5 @@
+"use client";
+
 import { Input, Label } from "@/components/ui";
 import type { FC, InputHTMLAttributes } from "react";
 import { useFormContext } from "react-hook-form";
