@@ -3,9 +3,9 @@ import { sendEmail } from "@/lib";
 import { prisma } from "@/prisma/prisma-client";
 import { PaymentCallbackData } from "@/@types/yookassa";
 import { OrderStatus } from "@prisma/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as PaymentCallbackData;
 
