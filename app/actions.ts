@@ -1,11 +1,16 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { PayOrderTemplate } from "@/components/shared";
+import {
+  PayOrderTemplate,
+  VerificationUserTemplate,
+} from "@/components/shared";
 import { CheckoutFormValues } from "@/components/shared/checkout/checkout-form-schema";
 import { createPayment, sendEmail } from "@/lib";
 import { prisma } from "@/prisma/prisma-client";
-import { OrderStatus } from "@prisma/client";
+import { OrderStatus, Prisma } from "@prisma/client";
+import { getUserSession } from "@/lib/get-user-session";
+import { hashSync } from "bcrypt";
 
 export const createOrder = async (data: CheckoutFormValues) => {
   try {
@@ -99,5 +104,83 @@ export const createOrder = async (data: CheckoutFormValues) => {
     return paymentUrl;
   } catch (error) {
     console.log("[CreateOrder] Server error", error);
+  }
+};
+
+export const updateUserInfo = async (body: Prisma.UserUpdateInput) => {
+  try {
+    const currentUser = await getUserSession();
+
+    if (!currentUser) {
+      throw new Error("The user was not found");
+    }
+
+    const findUser = await prisma.user.findFirst({
+      where: {
+        id: Number(currentUser.id),
+      },
+    });
+
+    await prisma.user.update({
+      where: {
+        id: Number(currentUser.id),
+      },
+      data: {
+        name: body.name,
+        email: body.email,
+        password: body.password
+          ? hashSync(body.password as string, 10)
+          : findUser?.password,
+      },
+    });
+  } catch (error) {
+    console.log("Error [CREATE_USER]", error);
+    throw error;
+  }
+};
+
+export const registerUser = async (body: Prisma.UserCreateInput) => {
+  try {
+    const user = await prisma.user.findFirst({
+      where: {
+        email: body.email,
+      },
+    });
+
+    if (user) {
+      if (!user.verified) {
+        throw new Error("Email has not been confirmed");
+      }
+
+      throw new Error("The user already exists");
+    }
+
+    const createdUser = await prisma.user.create({
+      data: {
+        name: body.name,
+        email: body.email,
+        password: hashSync(body.password, 10),
+      },
+    });
+
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+
+    await prisma.verificationCode.create({
+      data: {
+        code,
+        userId: createdUser.id,
+      },
+    });
+
+    await sendEmail(
+      createdUser.email,
+      "Cyber / 📝 Confirmation of registration",
+      VerificationUserTemplate({
+        code,
+      })
+    );
+  } catch (error) {
+    console.log("Error [CREATE_USER]", error);
+    throw error;
   }
 };

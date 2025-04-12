@@ -21,10 +21,17 @@ export const UserActions: FC<UserActionsProps> = ({ className }) => {
         variant="secondary"
         size="icon"
         title="wishlist"
+        className="hover-hover:bg-primary hover-hover:text-background"
       >
         <Heart size={24} />
       </ButtonLink>
-      <ButtonLink href="/cart" variant="secondary" size="icon" title="cart">
+      <ButtonLink
+        href="/cart"
+        variant="secondary"
+        size="icon"
+        title="cart"
+        className="hover-hover:bg-primary hover-hover:text-background"
+      >
         <ShoppingCart size={24} />
       </ButtonLink>
       <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />

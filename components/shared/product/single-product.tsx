@@ -88,7 +88,7 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
             <ProductColors
               colors={colors}
               colorValue={colors[colorIndex]}
-              handleChangeColor={handleChangeColor}
+              onChangeColor={handleChangeColor}
             />
           )}
           {memories.length > 0 && (
@@ -96,7 +96,7 @@ export const SingleProduct: FC<ProductProps> = ({ product, className }) => {
               memories={memories}
               className="mt-6"
               memoryValue={memories[memoryIndex]}
-              handleChangeMemory={handleChangeMemory}
+              onChangeMemory={handleChangeMemory}
             />
           )}
           <ProductSpecification specs={product.specs} className="mt-6" />

@@ -20,6 +20,7 @@ export const ProfileButton: FC<ProfileButtonProps> = ({ onClickSignIn }) => {
           size="icon"
           onClick={onClickSignIn}
           type="button"
+          className="hover-hover:bg-primary hover-hover:text-background"
         >
           <User size={24} />
         </Button>
@@ -29,6 +30,7 @@ export const ProfileButton: FC<ProfileButtonProps> = ({ onClickSignIn }) => {
           variant="secondary"
           size="icon"
           title="profile"
+          className="hover-hover:bg-primary hover-hover:text-background"
         >
           <CircleUser size={24} />
         </ButtonLink>

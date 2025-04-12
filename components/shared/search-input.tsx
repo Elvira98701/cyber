@@ -40,7 +40,7 @@ export const SearchInput: FC<SearchInputProps> = ({ className, ...props }) => {
     [searchQuery]
   );
 
-  const onClickItem = () => {
+  const handleClickItem = () => {
     setFocused(false);
     setSearchQuery("");
     setProducts([]);
@@ -81,7 +81,7 @@ export const SearchInput: FC<SearchInputProps> = ({ className, ...props }) => {
                 key={product.id}
                 className="flex items-center gap-3 rounded-lg w-full px-2 sm:px-3 py-2 hover:bg-primary/90 hover:text-background transition-all"
                 href={`/catalog/${product.category.slug}/${product.slug}`}
-                onClick={onClickItem}
+                onClick={handleClickItem}
               >
                 <Image
                   className="rounded-sm h-8 w-8 object-cover"

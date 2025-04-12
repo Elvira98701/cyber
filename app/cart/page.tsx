@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Cart() {
   return (
-    <main className="pt-48 pb-28">
+    <main className="pt-28 pb-12 md:pt-48 md:pb-28">
       <ShoppingCart />
     </main>
   );

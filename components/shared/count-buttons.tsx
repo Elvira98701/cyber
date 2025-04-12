@@ -7,10 +7,7 @@ interface CountButtonsProps {
   value: number;
   cartItemId: number;
   quantity: number;
-  handleUpdateItemQuantity: (
-    cartItemId: number,
-    quantity: number
-  ) => Promise<void>;
+  onUpdateItemQuantity: (cartItemId: number, quantity: number) => Promise<void>;
   className?: string;
 }
 
@@ -18,7 +15,7 @@ export const CountButtons: FC<CountButtonsProps> = ({
   value,
   cartItemId,
   quantity,
-  handleUpdateItemQuantity,
+  onUpdateItemQuantity,
   className,
 }) => {
   return (
@@ -28,7 +25,7 @@ export const CountButtons: FC<CountButtonsProps> = ({
         variant="ghost"
         disabled={quantity === 1}
         onClick={() => {
-          handleUpdateItemQuantity(cartItemId, quantity - 1);
+          onUpdateItemQuantity(cartItemId, quantity - 1);
         }}
         type="button"
       >
@@ -41,7 +38,7 @@ export const CountButtons: FC<CountButtonsProps> = ({
         size="icon"
         variant="ghost"
         onClick={() => {
-          handleUpdateItemQuantity(cartItemId, quantity + 1);
+          onUpdateItemQuantity(cartItemId, quantity + 1);
         }}
         type="button"
       >

@@ -11,19 +11,16 @@ import { Button } from "@/components/ui";
 interface CartListProps {
   items: CartStateItem[];
   loading: boolean;
-  handleRemoveCartItem: (id: number) => Promise<void>;
-  handleUpdateItemQuantity: (
-    cartItemId: number,
-    quantity: number
-  ) => Promise<void>;
+  onRemoveCartItem: (id: number) => Promise<void>;
+  onUpdateItemQuantity: (cartItemId: number, quantity: number) => Promise<void>;
   className?: string;
 }
 
 export const CartList: FC<CartListProps> = ({
   items,
   loading,
-  handleRemoveCartItem,
-  handleUpdateItemQuantity,
+  onRemoveCartItem,
+  onUpdateItemQuantity,
   className,
 }) => {
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -64,14 +61,14 @@ export const CartList: FC<CartListProps> = ({
               value={item.quantity}
               cartItemId={item.id}
               quantity={item.quantity}
-              handleUpdateItemQuantity={handleUpdateItemQuantity}
+              onUpdateItemQuantity={onUpdateItemQuantity}
             />
 
             <Button
               size="icon"
               onClick={() => {
                 setActiveId(item.id);
-                handleRemoveCartItem(item.id);
+                onRemoveCartItem(item.id);
               }}
               loading={activeId === item.id ? loading : false}
               type="button"

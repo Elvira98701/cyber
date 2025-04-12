@@ -65,8 +65,8 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({ className }) => {
           ) : totalAmount > 0 ? (
             <CartList
               items={items}
-              handleRemoveCartItem={handleRemoveCartItem}
-              handleUpdateItemQuantity={handleUpdateItemQuantity}
+              onRemoveCartItem={handleRemoveCartItem}
+              onUpdateItemQuantity={handleUpdateItemQuantity}
               loading={loadingCart}
             />
           ) : (

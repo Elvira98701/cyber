@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Wishlist() {
   return (
-    <main className="pt-48 pb-28">
+    <main className="pt-28 pb-12 md:pt-48 md:pb-28">
       <section className="min-h-[50vh]">
         <Container>
           <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">

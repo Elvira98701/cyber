@@ -6,14 +6,14 @@ import { Button } from "@/components/ui";
 interface ProductColorsProps {
   colors: string[];
   colorValue: string;
-  handleChangeColor: (index: number) => void;
+  onChangeColor: (index: number) => void;
   className?: string;
 }
 
 export const ProductColors: FC<ProductColorsProps> = ({
   colors,
   colorValue,
-  handleChangeColor,
+  onChangeColor,
   className,
 }) => {
   return (
@@ -26,7 +26,7 @@ export const ProductColors: FC<ProductColorsProps> = ({
               style={{ backgroundColor: color }}
               size="icon"
               className={"w-8 h-8 rounded-full"}
-              onClick={() => handleChangeColor(index)}
+              onClick={() => onChangeColor(index)}
               type="button"
             >
               {color === colorValue && <Check className="text-primary" />}

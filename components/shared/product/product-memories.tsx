@@ -5,14 +5,14 @@ import { Button } from "@/components/ui";
 interface ProductMemoriesProps {
   memoryValue: string;
   memories: string[];
-  handleChangeMemory: (index: number) => void;
+  onChangeMemory: (index: number) => void;
   className?: string;
 }
 
 export const ProductMemories: FC<ProductMemoriesProps> = ({
   memoryValue,
   memories,
-  handleChangeMemory,
+  onChangeMemory,
   className,
 }) => {
   return (
@@ -25,7 +25,7 @@ export const ProductMemories: FC<ProductMemoriesProps> = ({
             className={cn("text-foreground", {
               "bg-primary text-background": memoryValue === memory,
             })}
-            onClick={() => handleChangeMemory(index)}
+            onClick={() => onChangeMemory(index)}
             type="button"
           >
             {memory}

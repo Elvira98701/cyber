@@ -38,8 +38,6 @@ export async function POST(req: NextResponse) {
         "Cyber / Your order has been successfully placed",
         OrderSuccessTemplate({ orderId: order.id, items })
       );
-    } else {
-      // письмо о неуспешной оплате
     }
   } catch (error) {
     console.log("[Checkout Callback] Error:", error);

@@ -64,15 +64,17 @@ model Review {
 }
 
 model User {
-    id       Int       @id @default(autoincrement())
+    id       Int    @id @default(autoincrement())
     name     String
-    email    String    @unique
+    email    String @unique
     password String
-    reviews  Review[]
-    role     Role      @default(USER)
-    cart     Cart?
-    wishlist Wishlist?
-    orders   Order[]
+
+    reviews          Review[]
+    role             Role              @default(USER)
+    cart             Cart?
+    wishlist         Wishlist?
+    orders           Order[]
+    verificationCode VerificationCode?
 
     verified   DateTime?
     provider   String?
@@ -149,6 +151,19 @@ model WishlistItem {
     wishlistId Int
     product    Product  @relation(fields: [productId], references: [id])
     productId  Int
+}
+
+model VerificationCode {
+    id Int @id @default(autoincrement())
+
+    user   User @relation(fields: [userId], references: [id])
+    userId Int  @unique
+
+    code String
+
+    createdAt DateTime @default(now())
+
+    @@unique([userId, code])
 }
 
 enum OrderStatus {

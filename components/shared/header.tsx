@@ -25,6 +25,10 @@ export const Header: FC<HeaderProps> = ({ className }) => {
     if (searchParams.has("paid")) {
       toast.success("The order has been successfully paid for!");
     }
+
+    if (searchParams.has("verified")) {
+      toast.success("Mail has been successfully confirmed!");
+    }
   }, [searchParams]);
 
   return (

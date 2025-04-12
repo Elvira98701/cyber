@@ -13,6 +13,7 @@ export { Preloader } from "./preloader";
 export { ProductCard } from "./product-card";
 export { ProductList } from "./products-list";
 export { ProfileButton } from "./profile-button";
+export { ProfileForm } from "./profile-form";
 export { Promo } from "./promo";
 export { Providers } from "./providers";
 export { Reviews } from "./reviews";

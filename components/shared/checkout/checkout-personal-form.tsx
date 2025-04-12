@@ -21,8 +21,18 @@ export const CheckoutPersonalForm: FC<CheckoutPersonalFormProps> = ({
           placeholder="Ivanov"
           required
         />
-        <FormInput name="email" label="Email" placeholder="Email" required />
-        <FormInput name="phone" label="Phone" placeholder="Phone" required />
+        <FormInput
+          name="email"
+          label="Email"
+          placeholder="example@mail.ru"
+          required
+        />
+        <FormInput
+          name="phone"
+          label="Phone"
+          placeholder="89001234567"
+          required
+        />
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export const CheckboxFiltersGroup: FC<CheckboxFiltersGroupProps> = ({
   const [showAll, setShowAll] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
-  const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
@@ -47,7 +47,7 @@ export const CheckboxFiltersGroup: FC<CheckboxFiltersGroupProps> = ({
             type="search"
             placeholder="Search"
             className="bg-background"
-            onChange={onChangeSearchInput}
+            onChange={handleChangeSearchInput}
           />
         </div>
       )}
