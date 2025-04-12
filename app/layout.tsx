@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { Inter } from "next/font/google";
 import { Footer, Header, Providers } from "@/components/shared";
 import "./globals.css";
@@ -26,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <Providers>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           {children}
           {modal}
           <Footer />
