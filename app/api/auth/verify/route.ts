@@ -1,9 +1,11 @@
 import { prisma } from "@/prisma/prisma-client";
 import { NextRequest, NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: NextRequest) {
   try {
-    const code = "";
+    const code = req.nextUrl.searchParams.get("code");
 
     if (!code) {
       return NextResponse.json({ error: "Invalid code" }, { status: 400 });
