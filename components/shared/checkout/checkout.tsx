@@ -90,11 +90,13 @@ export const Checkout: FC<CheckoutProps> = ({ className }) => {
                 {loadingItems ? (
                   <Preloader className="flex justify-center items-center h-full" />
                 ) : (
-                  <CartSidebar
-                    totalAmount={totalAmount}
-                    type="form"
-                    loading={submitting}
-                  />
+                  totalAmount > 0 && (
+                    <CartSidebar
+                      totalAmount={totalAmount}
+                      type="form"
+                      loading={submitting}
+                    />
+                  )
                 )}
               </div>
             </div>

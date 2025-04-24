@@ -1,23 +1,29 @@
-import { ReactNode } from "react";
-import { Resend } from "resend";
+import { createTransport } from "nodemailer";
 
 export const sendEmail = async (
   to: string,
   subject: string,
-  template: ReactNode
+  htmlTemaplate: string
 ) => {
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  const { data, error } = await resend.emails.send({
-    from: "onboarding@resend.dev",
-    to,
-    subject,
-    react: template,
+  const transporter = createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
   });
 
-  if (error) {
+  const mailOptions = {
+    from: process.env.FROM_EMAIL || "your-email@domain.com",
+    to,
+    subject,
+    html: htmlTemaplate,
+  };
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    return info;
+  } catch (error) {
     throw error;
   }
-
-  return data;
 };

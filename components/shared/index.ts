@@ -25,7 +25,6 @@ export { UserActions } from "./user-actions";
 export * from "./cart";
 export * from "./categories";
 export * from "./checkout";
-export * from "./email-temapltes";
 export * from "./filters";
 export * from "./form";
 export * from "./modals";

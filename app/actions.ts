@@ -1,16 +1,13 @@
 "use server";
 
 import { cookies } from "next/headers";
-import {
-  PayOrderTemplate,
-  VerificationUserTemplate,
-} from "@/components/shared";
 import { CheckoutFormValues } from "@/components/shared/checkout/checkout-form-schema";
-import { createPayment, sendEmail } from "@/lib";
+import { createPayment } from "@/lib";
 import { prisma } from "@/prisma/prisma-client";
 import { OrderStatus, Prisma } from "@prisma/client";
 import { getUserSession } from "@/lib/get-user-session";
 import { hashSync } from "bcrypt";
+import { sendEmail } from "@/lib/send-email";
 
 export const createOrder = async (data: CheckoutFormValues) => {
   try {
@@ -94,11 +91,11 @@ export const createOrder = async (data: CheckoutFormValues) => {
     await sendEmail(
       data.email,
       "Cyber / Pay for the order #" + order.id,
-      PayOrderTemplate({
-        orderId: order.id,
-        totalAmount: order.totalAmount,
-        paymentUrl,
-      })
+      `<div>
+        <h1>Order #${order.id}</h1>
+        <p>Pay for the order in the amount of <b>${order.totalAmount} $</b>. Follow <a href=${paymentUrl}>this link</a> to pay for the order.
+        </p>
+      </div>`
     );
 
     return paymentUrl;
@@ -175,9 +172,14 @@ export const registerUser = async (body: Prisma.UserCreateInput) => {
     await sendEmail(
       createdUser.email,
       "Cyber / 📝 Confirmation of registration",
-      VerificationUserTemplate({
-        code,
-      })
+      `<div>
+        <h2>Confirmation code: ${code}</h2>
+        <p>
+        <a href=${process.env.NEXT_PUBLIC_SITE_URL}/api/auth/verify?code=${code}>
+          Confirm registration
+        </a>
+        </p>
+      </div>`
     );
   } catch (error) {
     console.log("Error [CREATE_USER]", error);

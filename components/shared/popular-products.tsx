@@ -3,7 +3,7 @@ import { Container } from "./container";
 import Image from "next/image";
 import { ButtonLink } from "../ui";
 import { cn } from "@/lib/utils";
-import { popularProducts } from "@/lib/constants";
+import { popularProducts } from "@/constants/constants";
 
 interface PopularProductsProps {
   className?: string;

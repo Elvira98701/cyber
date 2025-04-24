@@ -10,7 +10,7 @@ import {
   UserActions,
   SearchInput,
 } from "@/components/shared";
-import { navList } from "@/lib/constants";
+import { navList } from "@/constants/constants";
 import { useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 

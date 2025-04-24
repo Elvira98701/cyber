@@ -1,9 +1,8 @@
-import { OrderSuccessTemplate } from "@/components/shared/email-temapltes/order-success";
-import { sendEmail } from "@/lib";
 import { prisma } from "@/prisma/prisma-client";
 import { PaymentCallbackData } from "@/@types/yookassa";
 import { OrderStatus } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+import { sendEmail } from "@/lib/send-email";
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,13 +29,16 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const items = JSON.parse(order.items as string);
+    // const items = JSON.parse(order.items as string);
 
     if (isSucceeded) {
       await sendEmail(
         order.email,
         "Cyber / Your order has been successfully placed",
-        OrderSuccessTemplate({ orderId: order.id, items })
+        `<div>
+          <h1>Thank you for your purchase! 🎉</h1>
+          <p>Your order #${order.id} has been paid for.</p>
+        </div>`
       );
     }
   } catch (error) {
