@@ -10,7 +10,6 @@ import {
   FormRegisterValues,
 } from "./modals/auth/form/schemas";
 import { signOut } from "next-auth/react";
-import { Container } from "./container";
 import { FormInput } from "./form";
 import { Button } from "../ui";
 import { updateUserInfo } from "@/app/actions";
@@ -57,52 +56,50 @@ export const ProfileForm: FC<ProfileFormProps> = ({ data }) => {
 
   return (
     <section>
-      <Container>
-        <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">
-          Personal <span className="font-bold">Data</span>
-        </h1>
+      <h1 className="text-4xl md:text-5xl font-thin pb-8 md:pb-10">
+        Personal <span className="font-bold">Data</span>
+      </h1>
 
-        <FormProvider {...form}>
-          <form
-            className="flex flex-col gap-5 w-96 mt-10"
-            onSubmit={form.handleSubmit(onSubmit)}
+      <FormProvider {...form}>
+        <form
+          className="flex flex-col gap-5 w-72 sm:w-96 mt-2"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
+          <FormInput name="email" label="E-Mail" required />
+          <FormInput name="name" label="Name" required />
+
+          <FormInput
+            type="password"
+            name="password"
+            label="New password"
+            required
+          />
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            label="Repeat the password"
+            required
+          />
+
+          <Button
+            disabled={form.formState.isSubmitting}
+            className="text-base mt-2"
+            type="submit"
           >
-            <FormInput name="email" label="E-Mail" required />
-            <FormInput name="name" label="Name" required />
+            Save
+          </Button>
 
-            <FormInput
-              type="password"
-              name="password"
-              label="New password"
-              required
-            />
-            <FormInput
-              type="password"
-              name="confirmPassword"
-              label="Repeat the password"
-              required
-            />
-
-            <Button
-              disabled={form.formState.isSubmitting}
-              className="text-base mt-10"
-              type="submit"
-            >
-              Save
-            </Button>
-
-            <Button
-              onClick={handleClickSignOut}
-              variant="secondary"
-              disabled={form.formState.isSubmitting}
-              className="text-base"
-              type="button"
-            >
-              Exit
-            </Button>
-          </form>
-        </FormProvider>
-      </Container>
+          <Button
+            onClick={handleClickSignOut}
+            variant="secondary"
+            disabled={form.formState.isSubmitting}
+            className="text-base"
+            type="button"
+          >
+            Exit
+          </Button>
+        </form>
+      </FormProvider>
     </section>
   );
 };

@@ -13,7 +13,7 @@ export const CheckoutPersonalForm: FC<CheckoutPersonalFormProps> = ({
   return (
     <div className={cn("bg-muted rounded-lg p-5", className)}>
       <h2 className="mb-3 capitalize font-semibold">Personal data</h2>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid sm:grid-cols-2 gap-3">
         <FormInput name="firstName" label="Name" placeholder="Ivan" required />
         <FormInput
           name="lastName"

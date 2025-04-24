@@ -1,6 +1,7 @@
-import { ProfileForm } from "@/components/shared";
+import { Container, ProfileForm } from "@/components/shared";
 import { getUserSession } from "@/lib/get-user-session";
 import { prisma } from "@/prisma/prisma-client";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 
 export default async function Profile() {
@@ -20,7 +21,16 @@ export default async function Profile() {
 
   return (
     <main className="pt-28 pb-12 md:pt-48 md:pb-28">
-      <ProfileForm data={user} />
+      <Container className="flex gap-10 justify-between flex-col items-center md:flex-row">
+        <ProfileForm data={user} />
+        <Image
+          src="/images/profile.jpg"
+          width={650}
+          height={610}
+          alt="profile"
+          className="max-w-[650px] w-full h-auto"
+        />
+      </Container>
     </main>
   );
 }

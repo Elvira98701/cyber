@@ -72,8 +72,8 @@ export const Checkout: FC<CheckoutProps> = ({ className }) => {
 
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
-            <div className="flex gap-10">
-              <div className="flex flex-col gap-10 flex-1">
+            <div className="flex gap-10 flex-col lg:flex-row">
+              <div className="flex flex-col gap-5 md:gap-10 flex-1">
                 <CheckoutPersonalForm
                   className={
                     loadingItems ? "opacity-40 pointer-events-none" : ""
