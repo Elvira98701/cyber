@@ -23,7 +23,7 @@ export const ProductList: FC<ProductListProps> = ({
 
   return (
     <Suspense fallback={<p>Loading products...</p>}>
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-4">
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -34,6 +34,7 @@ export const ProductList: FC<ProductListProps> = ({
             price={product.price}
             imageUrl={product.images[0]}
             isFavorite={wishlist.some((item) => item.productId === product.id)}
+            contentClassName="min-h-[270px] sm:min-h-80"
           />
         ))}
       </div>

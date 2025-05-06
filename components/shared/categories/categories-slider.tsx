@@ -34,7 +34,7 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = async ({
             {categories.map((category) => (
               <CarouselItem
                 key={category.id}
-                className="md:basis-1/2 lg:basis-1/5"
+                className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
               >
                 <CategoryCard
                   link={`/catalog/${category.slug}`}

@@ -26,9 +26,15 @@ export const CategoryCard: FC<CategoryCardProps> = ({
     >
       <Link href={link}>
         <Card>
-          <CardContent className="flex aspect-square items-center justify-center flex-col p-6 gap-1 min-h-[200px]">
-            <Image src={image} width={150} height={150} alt={title} />
-            <span className="text-lg font-semibold">{title}</span>
+          <CardContent className="flex aspect-square items-center justify-center flex-col py-6 gap-1">
+            <Image
+              src={image}
+              width={150}
+              height={150}
+              alt={title}
+              className="max-w-[150px] w-full h-auto"
+            />
+            <span className="text-sm sm:text-lg font-semibold">{title}</span>
           </CardContent>
         </Card>
       </Link>
