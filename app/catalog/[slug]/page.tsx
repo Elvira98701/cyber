@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  Container,
-  Filters,
-  ProductList,
-  SortPopup,
-} from "@/components/shared";
+import { Container, Filters, ProductList } from "@/components/shared";
 import { GetSearchParams } from "@/lib/find-products";
 import { getCategoryWithProducts } from "@/lib";
 
@@ -39,7 +34,7 @@ export default async function CategoryPage({
             <p>
               Products: <b className="text-foreground">{products.length}</b>
             </p>
-            <SortPopup />
+            {/* <SortPopup /> */}
           </header>
           <ProductList products={products} categorySlug={params.slug} />
         </div>

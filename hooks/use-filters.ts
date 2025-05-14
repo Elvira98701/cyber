@@ -46,6 +46,8 @@ export const useFilters = () => {
       const currentValues = prev[category] || [];
       const updatedValues = currentValues.includes(value)
         ? currentValues.filter((item) => item !== value)
+        : category === "sortingValue" || category === "sorting"
+        ? [value]
         : [...currentValues, value];
 
       return {

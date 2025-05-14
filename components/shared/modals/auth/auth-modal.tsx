@@ -18,13 +18,14 @@ export const AuthModal: FC<AuthModalProps> = ({ open, onClose }) => {
     onClose();
   };
 
-  const handleSwitchType = () => {
+  const handleSwitchType = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     setType(type === "login" ? "register" : "login");
   };
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="w-[450px] bg-background p-5">
+      <DialogContent className="max-w-[450px] bg-background p-5">
         {type === "login" ? (
           <LoginForm onClose={handleClose} />
         ) : (

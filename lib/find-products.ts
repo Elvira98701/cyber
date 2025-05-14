@@ -18,6 +18,8 @@ export interface GetSearchParams {
   Smart?: string;
   Sound?: string;
   Power?: string;
+  sortingValue?: string;
+  order?: string;
 }
 
 const DEFAULT_MIN_PRICE = 0;
@@ -28,6 +30,11 @@ export const findProducts = async (
   categoryId: number
 ) => {
   const whereConditions: Prisma.ProductWhereInput = { categoryId };
+  const sortField: string = Array.isArray(params.sortingValue)
+    ? params.sortingValue[0]
+    : params.sortingValue || "name";
+
+  const sortOrder = params.order || "asc";
 
   if (params.brand) {
     whereConditions.brand = { in: params.brand.split(",") };
@@ -69,6 +76,11 @@ export const findProducts = async (
 
   const products = await prisma.product.findMany({
     where: whereConditions,
+    orderBy: [
+      {
+        [sortField]: sortOrder,
+      },
+    ],
     include: {
       specs: true,
     },
