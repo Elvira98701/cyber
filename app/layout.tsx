@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer, Header, Providers } from "@/components/shared";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter-sans" });
 
 export const metadata: Metadata = {
   title: {
