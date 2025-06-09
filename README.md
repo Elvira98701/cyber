@@ -1,37 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Cyber — интернет-магазин техники
 
-## Getting Started
+**Cyber** — это современное e-commerce приложение, созданное с использованием **Next.js 14 (App Router)**, **TypeScript**, **Prisma** и **Tailwind CSS**.  
+Проект реализует базовый функционал интернет-магазина: каталог товаров, корзину, гостевые заказы и авторизацию.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Цели проекта:
+
+ - Разработать масштабируемое SPA/SSR приложение с использованием Next.js App Router.
+ - Реализовать базовый e-commerce функционал: товары, категории, корзина, оформление заказа.
+ - Отработать навыки работы с Prisma ORM, server actions, middleware, защищёнными маршрутами.
+ - Освоить управление глобальным состоянием с помощью Zustand.
+ - Практиковаться в построении отзывчивого и минималистичного UI с Tailwind CSS.
+
+---
+
+## 🚀 Функции
+
+- 📦 Каталог техники с фильтрацией и сортировкой  
+- 🛍️ Корзина с добавлением и удалением товаров  
+- 👤 Гостевые и авторизованные заказы  
+- 🔐 Аутентификация через NextAuth  
+- 🧾 Server Actions и защищённые маршруты  
+- ⚙️ Админ-панель (в разработке)
+
+---
+
+## 🧱 Технологии
+
+| Технология     | Описание                                  |
+|----------------|--------------------------------------------|
+| Next.js 14     | App Router, Server Components              |
+| TypeScript     | Безопасность типов                         |
+| Tailwind CSS   | Утилитарная стилизация                     |
+| Prisma ORM     | Работа с PostgreSQL                        |
+| Zustand        | Глобальное управление состоянием           |
+| NextAuth.js    | Аутентификация и сессии                    |
+| Vercel         | Хостинг и CI/CD                            |
+
+---
+
+## 📁 Структура проекта
+
+<details>
+  <summary>Показать структуру</summary>
+
+```
+├── app/              # Страницы, маршруты и server components
+├── components/       # Повторно используемые UI-компоненты
+├── constants/        # Константы
+├── hooks/            # Пользовательские хуки
+├── prisma/           # Схема и миграции базы данных
+├── services/         # API-запросы
+├── store/            # Zustand-хранилище
+├── lib/              # Утилиты и вспомогательные функции
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</details>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 В разработке и планы:
 
-## Learn More
+- Исправить ошибку с сортировкой товаров
+- Админ-панель для управления товарами  
+- История заказов  
+- Тесты
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Установка и запуск
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/Elvira98701/cyber.git
+cd cyber
+npm install
+npx prisma generate
+npx prisma db push
+npm run dev
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Автор
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# cyber
+Разработано с ❤️ Эльвирой  
+[GitHub: @Elvira98701](https://github.com/Elvira98701)
