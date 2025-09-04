@@ -1,10 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import type { FC } from "react";
-import { AdressInput, FormTextarea } from "../form";
-import { ErrorText } from "../error-text";
+
 import { Controller, useFormContext } from "react-hook-form";
+
+import { ErrorText, AdressInput, FormTextarea } from "@/components/shared";
+import { cn } from "@/lib/utils";
 
 interface CheckoutAddressFormProps {
   className?: string;

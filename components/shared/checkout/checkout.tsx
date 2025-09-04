@@ -2,17 +2,18 @@
 
 import { useEffect, useState } from "react";
 import type { FC } from "react";
-import { Container } from "../container";
-import { useShop } from "@/hooks";
-import { CartSidebar } from "../cart";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckoutPersonalForm } from "./checkout-personal-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
+import { createOrder } from "@/app/actions";
+import { CartSidebar, Container, Preloader } from "@/components/shared";
+import { useShop } from "@/hooks";
+
 import { CheckoutAddressForm } from "./checkout-address-form";
 import { checkoutFormSchema, CheckoutFormValues } from "./checkout-form-schema";
-import { Preloader } from "../preloader";
-import { createOrder } from "@/app/actions";
-import toast from "react-hot-toast";
+import { CheckoutPersonalForm } from "./checkout-personal-form";
 
 interface CheckoutProps {
   className?: string;

@@ -2,11 +2,13 @@
 
 import type { FC } from "react";
 import { useState } from "react";
-import Image from "next/image";
+
 import { Trash2Icon } from "lucide-react";
-import { CartStateItem } from "@/lib/get-cart-details";
-import { CountButtons } from "../count-buttons";
+import Image from "next/image";
+
+import { CountButtons } from "@/components/shared";
 import { Button } from "@/components/ui";
+import { CartStateItem } from "@/lib/get-cart-details";
 
 interface CartListProps {
   items: CartStateItem[];

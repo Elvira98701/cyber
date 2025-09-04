@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import type { FC } from "react";
+
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { useShop } from "@/hooks";
+
 import { EmptyWishlist, Preloader, WishlistItems } from "@/components/shared";
 import {
   Dialog,
@@ -12,7 +12,9 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui";
+import { useShop } from "@/hooks";
+import { cn } from "@/lib/utils";
 
 interface WishlistModalProps {
   className?: string;

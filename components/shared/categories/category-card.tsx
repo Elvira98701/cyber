@@ -1,8 +1,10 @@
 import type { FC } from "react";
-import Link from "next/link";
+
 import Image from "next/image";
+import Link from "next/link";
+
+import { Card, CardContent } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface CategoryCardProps {
   link: string;

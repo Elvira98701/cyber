@@ -1,15 +1,17 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
-import { CategoryCard } from "./category-card";
-import { getCategories } from "@/services/categories";
-import { Container } from "../container";
-import { Carousel } from "@/components/ui";
+
+import { Container } from "@/components/shared";
 import {
+  Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/components/ui";
+import { cn } from "@/lib/utils";
+import { getCategories } from "@/services/categories";
+
+import { CategoryCard } from "./category-card";
 
 interface CategoriesSliderProps {
   className?: string;

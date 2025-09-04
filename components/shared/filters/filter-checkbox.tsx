@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import { Checkbox, Label } from "@/components/ui";
 import { cn } from "@/lib/utils";
 

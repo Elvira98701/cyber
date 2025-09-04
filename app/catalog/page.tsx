@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Categories, Container } from "@/components/shared";
 import { getCategories } from "@/services/categories";
 

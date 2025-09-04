@@ -1,12 +1,13 @@
 "use client";
 
 import type { FC } from "react";
-import { CardContent, Card } from "../ui/card";
-import Image from "next/image";
-import { ButtonLink } from "../ui";
+
 import { Heart } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+import { CardContent, Card, ButtonLink } from "@/components/ui";
 import { useShop } from "@/hooks";
+import { cn } from "@/lib/utils";
 
 interface ProductCardProps {
   id: number;

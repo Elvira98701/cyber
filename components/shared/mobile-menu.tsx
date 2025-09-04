@@ -2,12 +2,14 @@
 
 import type { FC } from "react";
 import { useRef, useState } from "react";
-import { Button, Navigation } from "../ui";
+
 import { Menu, X } from "lucide-react";
-import { INavItem } from "@/@types";
 import { AnimatePresence, motion } from "motion/react";
-import { UserActions } from "./user-actions";
 import { useClickAway } from "react-use";
+
+import { INavItem } from "@/@types";
+import { UserActions } from "@/components/shared";
+import { Button, Navigation } from "@/components/ui";
 
 interface MobileMenuProps {
   className?: string;

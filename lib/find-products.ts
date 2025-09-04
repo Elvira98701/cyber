@@ -1,5 +1,6 @@
-import { prisma } from "@/prisma/prisma-client";
 import { Prisma } from "@prisma/client";
+
+import { prisma } from "@/prisma/prisma-client";
 
 export interface GetSearchParams {
   brand?: string;

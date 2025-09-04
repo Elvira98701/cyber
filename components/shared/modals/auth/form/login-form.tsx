@@ -1,11 +1,14 @@
 import type { FC } from "react";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { formLoginSchema, FormLoginValues } from "./schemas";
+
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signIn } from "next-auth/react";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
 import { FormInput } from "@/components/shared/form";
 import { Button } from "@/components/ui";
-import toast from "react-hot-toast";
-import { signIn } from "next-auth/react";
+
+import { formLoginSchema, FormLoginValues } from "./schemas";
 
 interface LoginFormProps {
   onClose: VoidFunction;

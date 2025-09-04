@@ -2,17 +2,19 @@
 
 import type { FC } from "react";
 import { useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { Logo, Navigation } from "@/components/ui";
+
+import { useSearchParams } from "next/navigation";
+import toast from "react-hot-toast";
+
 import {
   Container,
   MobileMenu,
   UserActions,
   SearchInput,
 } from "@/components/shared";
+import { Logo, Navigation } from "@/components/ui";
 import { navList } from "@/constants/constants";
-import { useSearchParams } from "next/navigation";
-import toast from "react-hot-toast";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   className?: string;

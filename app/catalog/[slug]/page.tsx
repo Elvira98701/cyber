@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { Container, Filters, ProductList } from "@/components/shared";
-import { GetSearchParams } from "@/lib/find-products";
 import { getCategoryWithProducts } from "@/lib";
+import { GetSearchParams } from "@/lib/find-products";
 
 export const metadata: Metadata = {
   title: "Products",

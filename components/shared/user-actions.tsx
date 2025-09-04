@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, type FC } from "react";
-import { ButtonLink } from "../ui";
+
 import { Heart, ShoppingCart } from "lucide-react";
+
+import { ProfileButton, AuthModal } from "@/components/shared";
+import { ButtonLink } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { ProfileButton } from "./profile-button";
-import { AuthModal } from "./modals";
 
 interface UserActionsProps {
   className?: string;

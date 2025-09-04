@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
-import { Container } from "./container";
-import { SocialList } from "./social-list";
+
+import { Container, SocialList } from "@/components/shared";
 import { Logo } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 interface FooterProps {
   className?: string;

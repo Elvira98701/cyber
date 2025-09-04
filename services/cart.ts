@@ -3,8 +3,9 @@ import {
   CartWithItems,
   UpdateCartItemPayload,
 } from "@/@types";
-import { axiosInstance } from "./instance";
+
 import { ApiRoutes } from "./constants";
+import { axiosInstance } from "./instance";
 
 export const getCart = async (): Promise<CartWithItems> => {
   return (await axiosInstance.get<CartWithItems>(`/${ApiRoutes.CART}`)).data;

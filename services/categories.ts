@@ -1,7 +1,9 @@
-import { prisma } from "@/prisma/prisma-client";
+import { cache } from "react";
+
 import { Category } from "@prisma/client";
 import { notFound } from "next/navigation";
-import { cache } from "react";
+
+import { prisma } from "@/prisma/prisma-client";
 
 export const preload = () => {
   void getCategories();

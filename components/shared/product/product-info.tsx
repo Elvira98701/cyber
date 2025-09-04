@@ -1,6 +1,8 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
+
 import { BadgeCheck, Store, Truck } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 interface ProductInfoProps {
   stock: number;

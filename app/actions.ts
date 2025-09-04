@@ -1,13 +1,14 @@
 "use server";
 
+import { OrderStatus, Prisma } from "@prisma/client";
+import { hashSync } from "bcrypt";
 import { cookies } from "next/headers";
+
 import { CheckoutFormValues } from "@/components/shared/checkout/checkout-form-schema";
 import { createPayment } from "@/lib";
-import { prisma } from "@/prisma/prisma-client";
-import { OrderStatus, Prisma } from "@prisma/client";
 import { getUserSession } from "@/lib/get-user-session";
-import { hashSync } from "bcrypt";
 import { sendEmail } from "@/lib/send-email";
+import { prisma } from "@/prisma/prisma-client";
 
 export const createOrder = async (data: CheckoutFormValues) => {
   try {

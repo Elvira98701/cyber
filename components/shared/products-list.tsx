@@ -2,8 +2,10 @@
 
 import type { FC } from "react";
 import { Suspense, useEffect } from "react";
-import { ProductCard } from "./product-card";
+
 import { Product } from "@prisma/client";
+
+import { ProductCard } from "@/components/shared";
 import { useShop } from "@/hooks";
 
 interface ProductListProps {

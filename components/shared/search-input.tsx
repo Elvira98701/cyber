@@ -2,14 +2,16 @@
 
 import type { FC } from "react";
 import { InputHTMLAttributes, useRef, useState } from "react";
-import { useClickAway, useDebounce } from "react-use";
-import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { Search } from "lucide-react";
-import { Api } from "@/services/api-client";
+
 import { Product } from "@prisma/client";
+import { Search } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useClickAway, useDebounce } from "react-use";
+
 import { Input } from "@/components/ui";
+import { cn } from "@/lib/utils";
+import { Api } from "@/services/api-client";
 
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;

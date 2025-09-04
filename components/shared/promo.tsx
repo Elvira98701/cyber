@@ -1,7 +1,8 @@
 import type { FC } from "react";
+
+import { Container } from "@/components/shared";
+import { ButtonLink } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { Container } from "./container";
-import { ButtonLink } from "../ui";
 
 interface PromoProps {
   className?: string;

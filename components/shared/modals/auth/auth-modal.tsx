@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, type FC } from "react";
-import { Button, Dialog, DialogContent } from "@/components/ui";
+
 import { signIn } from "next-auth/react";
+
+import { Button, Dialog, DialogContent } from "@/components/ui";
+
 import { LoginForm } from "./form/login-form";
 import { RegisterForm } from "./form/register-form";
 

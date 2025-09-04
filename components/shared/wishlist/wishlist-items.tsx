@@ -1,7 +1,8 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
+
+import { ProductCard } from "@/components/shared";
 import { WishlistStateItem } from "@/lib/get-wishlist-details";
-import { ProductCard } from "../product-card";
+import { cn } from "@/lib/utils";
 
 interface WishlistItemsProps {
   wishlist: WishlistStateItem[];

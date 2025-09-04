@@ -1,5 +1,7 @@
 import type { FC } from "react";
+
 import { Category } from "@prisma/client";
+
 import { CategoryCard } from "./category-card";
 
 interface CategoriesProps {

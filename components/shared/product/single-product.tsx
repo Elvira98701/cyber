@@ -2,20 +2,21 @@
 
 import type { FC } from "react";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import toast from "react-hot-toast";
-import { useShop } from "@/hooks";
+
 import { Product, ProductSpec, Review } from "@prisma/client";
-import { Container } from "../container";
+import toast from "react-hot-toast";
+
+import { Container } from "@/components/shared";
 import { Button } from "@/components/ui";
-import {
-  ImagesPresentation,
-  ProductColors,
-  ProductInfo,
-  ProductMemories,
-  ProductPrices,
-  ProductSpecification,
-} from "@/components/shared/product";
+import { useShop } from "@/hooks";
+import { cn } from "@/lib/utils";
+
+import { ImagesPresentation } from "./images-presentation";
+import { ProductColors } from "./product-colors";
+import { ProductInfo } from "./product-info";
+import { ProductMemories } from "./product-memories";
+import { ProductPrices } from "./product-prices";
+import { ProductSpecification } from "./product-specification";
 
 interface ProductProps {
   product: Product & { specs: ProductSpec[]; reviews: Review[] };

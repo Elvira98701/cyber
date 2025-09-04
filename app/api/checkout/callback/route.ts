@@ -1,8 +1,9 @@
-import { prisma } from "@/prisma/prisma-client";
-import { PaymentCallbackData } from "@/@types/yookassa";
 import { OrderStatus } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+
+import { PaymentCallbackData } from "@/@types/yookassa";
 import { sendEmail } from "@/lib/send-email";
+import { prisma } from "@/prisma/prisma-client";
 
 export async function POST(req: NextRequest) {
   try {

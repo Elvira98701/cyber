@@ -1,18 +1,21 @@
 "use client";
 
+import type { FC } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "@prisma/client";
-import type { FC } from "react";
+import { signOut } from "next-auth/react";
 import { FormProvider, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+
+import { updateUserInfo } from "@/app/actions";
+import { Button } from "@/components/ui";
+
+import { FormInput } from "./form";
 import {
   formRegisterSchema,
   FormRegisterValues,
 } from "./modals/auth/form/schemas";
-import { signOut } from "next-auth/react";
-import { FormInput } from "./form";
-import { Button } from "../ui";
-import { updateUserInfo } from "@/app/actions";
 
 interface ProfileFormProps {
   data: User;

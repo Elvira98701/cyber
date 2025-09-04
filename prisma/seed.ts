@@ -1,6 +1,7 @@
 import { hashSync } from "bcrypt";
-import { prisma } from "./prisma-client";
+
 import { categories, products, reviews, specsData } from "./constants";
+import { prisma } from "./prisma-client";
 
 async function up() {
   await prisma.user.createMany({

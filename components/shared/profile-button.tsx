@@ -1,9 +1,11 @@
 "use client";
 
 import type { FC } from "react";
-import { useSession } from "next-auth/react";
-import { Button, ButtonLink } from "../ui";
+
 import { CircleUser, User } from "lucide-react";
+import { useSession } from "next-auth/react";
+
+import { Button, ButtonLink } from "@/components/ui";
 
 interface ProfileButtonProps {
   onClickSignIn: () => void;

@@ -1,9 +1,11 @@
 import type { FC } from "react";
-import { Container } from "./container";
+
 import Image from "next/image";
-import { ButtonLink } from "../ui";
-import { cn } from "@/lib/utils";
+
+import { Container } from "@/components/shared";
+import { ButtonLink } from "@/components/ui";
 import { popularProducts } from "@/constants/constants";
+import { cn } from "@/lib/utils";
 
 interface PopularProductsProps {
   className?: string;

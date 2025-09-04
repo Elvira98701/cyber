@@ -1,4 +1,5 @@
 import { prisma } from "@/prisma/prisma-client";
+
 import { findProducts, GetSearchParams } from "./find-products";
 
 export const getCategoryWithProducts = async (

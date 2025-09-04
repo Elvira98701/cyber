@@ -1,5 +1,6 @@
 import type { FC } from "react";
-import { Container } from "./container";
+
+import { Container } from "@/components/shared";
 
 interface ContactUsProps {
   className?: string;

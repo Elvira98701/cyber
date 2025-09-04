@@ -2,14 +2,16 @@
 
 import type { FC } from "react";
 import { useEffect } from "react";
+
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { Container } from "../container";
-import { CartSidebar } from "./cart-sidebar";
-import { CartList } from "./cart-list";
+
+import { Container, Preloader } from "@/components/shared";
 import { ButtonLink } from "@/components/ui";
 import { useShop } from "@/hooks/use-shop";
-import { Preloader } from "../preloader";
+
+import { CartList } from "./cart-list";
+import { CartSidebar } from "./cart-sidebar";
 
 interface ShoppingCartProps {
   className?: string;

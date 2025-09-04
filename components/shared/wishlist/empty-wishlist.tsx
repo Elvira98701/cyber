@@ -1,6 +1,8 @@
-import { ButtonLink } from "@/components/ui";
-import { Heart } from "lucide-react";
 import type { FC } from "react";
+
+import { Heart } from "lucide-react";
+
+import { ButtonLink } from "@/components/ui";
 
 export const EmptyWishlist: FC = () => {
   return (

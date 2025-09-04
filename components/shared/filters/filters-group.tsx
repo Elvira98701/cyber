@@ -1,11 +1,13 @@
 "use client";
 
 import type { FC } from "react";
+
+import { Input, RangeSlider } from "@/components/ui";
 import { FiltersType } from "@/hooks/use-fetch-filters";
+import { Price } from "@/hooks/use-filters";
+
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
 import { FiltersSkeleton } from "./filters-skeleton";
-import { Price } from "@/hooks/use-filters";
-import { Input, RangeSlider } from "@/components/ui";
 
 interface FiltersGroupProps {
   filters: FiltersType;

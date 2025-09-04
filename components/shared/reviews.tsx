@@ -1,7 +1,9 @@
 import type { FC } from "react";
+
 import { Review } from "@prisma/client";
-import { Container } from "./container";
 import { Star } from "lucide-react";
+
+import { Container } from "@/components/shared";
 
 interface ExtendedReview extends Review {
   user: {

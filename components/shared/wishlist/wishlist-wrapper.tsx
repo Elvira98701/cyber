@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 import type { FC } from "react";
+
+import { Preloader } from "@/components/shared";
 import { useShop } from "@/hooks";
-import { Preloader } from "../preloader";
-import { WishlistItems } from "./wishlist-items";
+
 import { EmptyWishlist } from "./empty-wishlist";
+import { WishlistItems } from "./wishlist-items";
 
 export const WishlistWrapper: FC = () => {
   const { loadingWishlist, wishlist, fetchWishlist } = useShop();

@@ -1,6 +1,8 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
+
 import { ProductSpec } from "@prisma/client";
+
+import { cn } from "@/lib/utils";
 
 interface ProductSpecProps {
   specs: ProductSpec[];

@@ -1,6 +1,7 @@
 import type { FC } from "react";
+
+import { ButtonLink } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { ButtonLink } from "../ui";
 
 interface SmallerBannersProps {
   className?: string;

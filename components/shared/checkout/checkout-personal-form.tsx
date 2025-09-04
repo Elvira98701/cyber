@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import { FormInput } from "../form";
+import { FormInput } from "@/components/shared";
 import { cn } from "@/lib/utils";
 
 interface CheckoutPersonalFormProps {

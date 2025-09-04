@@ -2,7 +2,9 @@
 
 import type { FC } from "react";
 import { useState } from "react";
+
 import { Button, Input } from "@/components/ui";
+
 import { FilterCheckbox } from "./filter-checkbox";
 
 interface CheckboxFiltersGroupProps {

@@ -2,8 +2,9 @@
 
 import type { FC } from "react";
 import { useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
-import { ProductCard } from "../product-card";
+
+import { ProductCard } from "@/components/shared";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { useShop } from "@/hooks";
 
 type ProductProp = {

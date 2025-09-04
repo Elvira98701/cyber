@@ -1,5 +1,6 @@
-import { PaymentData } from "@/@types/yookassa";
 import axios from "axios";
+
+import { PaymentData } from "@/@types/yookassa";
 
 interface Details {
   description: string;

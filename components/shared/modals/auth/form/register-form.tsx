@@ -1,11 +1,14 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import type { FC } from "react";
+
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
-import { formRegisterSchema, FormRegisterValues } from "./schemas";
 import toast from "react-hot-toast";
-import { FormInput } from "@/components/shared/form";
-import { Button } from "@/components/ui";
+
 import { registerUser } from "@/app/actions";
+import { FormInput } from "@/components/shared";
+import { Button } from "@/components/ui";
+
+import { formRegisterSchema, FormRegisterValues } from "./schemas";
 
 interface RegisterFormProps {
   onClose?: VoidFunction;

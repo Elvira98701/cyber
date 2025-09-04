@@ -1,15 +1,16 @@
 "use client";
 
 import type { FC } from "react";
-import { Select } from "@/components/ui";
+
 import {
+  Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui";
 import { useFilters } from "@/hooks";
 
 interface SortPopupProps {

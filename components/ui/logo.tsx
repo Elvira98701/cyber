@@ -1,6 +1,8 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import type { FC } from "react";
+
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;

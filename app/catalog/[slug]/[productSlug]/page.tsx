@@ -1,7 +1,8 @@
-import { prisma } from "@/prisma/prisma-client";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { PopularProducts, Reviews, SingleProduct } from "@/components/shared";
+import { prisma } from "@/prisma/prisma-client";
 
 export const metadata: Metadata = {
   title: "Product",

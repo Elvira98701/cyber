@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
 import { Suspense, type ReactNode } from "react";
+
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import { Footer, Header, Providers } from "@/components/shared";
 import "./globals.css";
 

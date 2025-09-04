@@ -1,6 +1,8 @@
-import { cn } from "@/lib/utils";
-import { X } from "lucide-react";
 import type { FC } from "react";
+
+import { X } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 
 interface ClearButtonProps {
   className?: string;

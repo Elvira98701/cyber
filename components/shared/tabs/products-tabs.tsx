@@ -1,9 +1,12 @@
 import type { FC } from "react";
-import { cn } from "@/lib/utils";
-import { Container } from "../container";
-import { prisma } from "@/prisma/prisma-client";
-import { TabsProductsList } from "./tabs-products-list";
+
 import { notFound } from "next/navigation";
+
+import { Container } from "@/components/shared";
+import { cn } from "@/lib/utils";
+import { prisma } from "@/prisma/prisma-client";
+
+import { TabsProductsList } from "./tabs-products-list";
 
 interface ProductsTabsProps {
   className?: string;

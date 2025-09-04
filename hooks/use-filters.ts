@@ -1,6 +1,8 @@
-import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import qs from "qs";
+
 import { FiltersType } from "./use-fetch-filters";
 
 export interface Price {

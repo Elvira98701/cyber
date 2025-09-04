@@ -1,11 +1,13 @@
 "use client";
 
 import type { FC } from "react";
+
 import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Container } from "./container";
-import { ButtonLink } from "../ui";
+
+import { Container } from "@/components/shared";
+import { ButtonLink } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 interface BannerProps {
   className?: string;

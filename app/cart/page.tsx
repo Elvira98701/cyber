@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { ShoppingCart } from "@/components/shared";
 
 export const metadata: Metadata = {

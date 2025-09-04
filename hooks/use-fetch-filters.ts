@@ -1,5 +1,6 @@
-import { Api } from "@/services/api-client";
 import { useEffect, useState } from "react";
+
+import { Api } from "@/services/api-client";
 
 export type FiltersType = Record<string, string[]>;
 

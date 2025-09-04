@@ -1,6 +1,7 @@
 "use client";
 
 import type { FC } from "react";
+
 import { AddressSuggestions } from "react-dadata";
 import "react-dadata/dist/react-dadata.css";
 

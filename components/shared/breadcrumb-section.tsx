@@ -2,8 +2,10 @@
 
 import type { FC } from "react";
 import { Fragment } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,7 +13,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../ui/breadcrumb";
+} from "@/components/ui";
 
 interface BreadcrumbSectionProps {
   className?: string;

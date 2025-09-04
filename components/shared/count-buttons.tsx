@@ -1,6 +1,8 @@
 import type { FC } from "react";
-import { Button } from "../ui";
+
 import { Minus, Plus } from "lucide-react";
+
+import { Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 interface CountButtonsProps {
