@@ -73,12 +73,52 @@
 
 ## 📦 Установка и запуск
 
+### 1. Клонируем репозиторий
 ```bash
 git clone https://github.com/Elvira98701/cyber.git
 cd cyber
+```
+
+### 2. Устанавливаем зависимости
+```bash
 npm install
+```
+
+### 3. Создайте файл .env в корне проекта и добавьте строку подключения к базе данных:
+```
+POSTGRES_PRISMA_URL=your_postgres_prisma_url
+POSTGRES_URL_NON_POOLING=your_postgres_url_non_pooling
+```
+
+### 4. Настройка Prisma
+```bash
 npx prisma generate
 npx prisma db push
+```
+
+### 5. Остальное в .env
+```
+NEXT_PUBLIC_API_URL=/api
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+NEXT_PUBLIC_DADATA_API_KEY=your_dadata_api_key
+
+YOOKASSA_STORE_ID=your_yookassa_store_id
+YOOKASSA_API_KEY=your_yookassa_api_key
+YOOKASSA_CALLBACK_URL=http://localhost:3000/?paid
+
+GITHUB_ID=your_github_id
+GITHUB_SECRET=your_github_secret
+
+NEXTAUTH_SECRET=your_nextauth_secret
+
+SMTP_USER=your@gmail.com
+SMTP_PASS=your_smtp_pass
+FROM_EMAIL=your-email@domain.com
+```
+
+### 6. Запуск проекта
+```bash
 npm run dev
 ```
 
@@ -88,3 +128,5 @@ npm run dev
 
 Разработано с ❤️ Эльвирой  
 [GitHub: @Elvira98701](https://github.com/Elvira98701)
+
+
