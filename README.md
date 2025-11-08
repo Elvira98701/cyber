@@ -92,7 +92,6 @@ POSTGRES_URL_NON_POOLING=your_postgres_url_non_pooling
 
 ### 4. Настройка Prisma
 ```bash
-npx prisma generate
 npx prisma db push
 npx prisma db seed
 ```
