@@ -94,6 +94,7 @@ POSTGRES_URL_NON_POOLING=your_postgres_url_non_pooling
 ```bash
 npx prisma generate
 npx prisma db push
+npx prisma db seed
 ```
 
 ### 5. Остальное в .env
@@ -124,9 +125,6 @@ npm run dev
 
 ---
 
-## 🛠️ Автор
 
-Разработано с ❤️ Эльвирой  
-[GitHub: @Elvira98701](https://github.com/Elvira98701)
 
 
